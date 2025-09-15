@@ -528,10 +528,25 @@
             font-size: 1.1rem;
         }
 
+        /* Styling untuk video portrait */
+        .portrait-video {
+            max-height: 600px;        /* batasi tinggi */
+            width: auto;              /* biar proporsional */
+            max-width: 100%;          /* jangan melebihi container */
+            display: block;
+            margin: 0 auto;           /* center */
+            border-radius: 18px;
+        }
+
         /* Video container in how-it-works section */
         .how-it-works .video-container {
             margin-bottom: 40px;
         }
+@media (max-width: 768px) {
+    .portrait-video {
+        max-height: 70vh;
+    }
+}
 
         /* Gestun online section */
         .gestun-online-content {
@@ -1284,12 +1299,11 @@
             </div>
 
             <!-- Video Demonstrasi - IMPROVED -->
-            <div class="video-container ultra-glass animate-on-scroll">
-                <video controls poster="images/poster.jpg" preload="metadata">
-                    <source src="images/Gestun_by_sandra.mp4" type="video/mp4">
-                    Browser Anda tidak mendukung pemutaran video.
-                </video>
-            </div>
+        <video class="portrait-video" controls poster="images/poster.jpg" preload="metadata">
+            <source src="images/Gestun_by_sandra.mp4" type="video/mp4">
+            Browser Anda tidak mendukung pemutaran video.
+        </video>
+
 
             <div class="steps-container">
                 <div class="step-card ultra-glass animate-on-scroll">
@@ -1604,7 +1618,7 @@
                             <div class="whatsapp-options">
                                 <a href="https://wa.me/628123456789" target="_blank" class="whatsapp-option">
                                     <i class="fab fa-whatsapp"></i>
-                                    +62 887-2549-474 (Customer Service)
+                                    +62 - (Customer Service)
                                 </a>
                             </div>
                         </div>
@@ -1618,7 +1632,7 @@
                             <div class="whatsapp-options">
                                 <a href="https://wa.me/628123456789" target="_blank" class="whatsapp-option">
                                     <i class="fab fa-whatsapp"></i>
-                                    +62 +62 821-8888-6015 (Customer Service)
+                                    +62 - (Customer Service)
                                 </a>
                             </div>
                         </div>
@@ -1726,7 +1740,7 @@
                 
                 <div class="footer-section animate-on-scroll">
                     <h3>Kontak</h3>
-                    <p><i class="fab fa-whatsapp"></i> WhatsApp: +62 812-3456-789</p>
+                    <p><i class="fab fa-whatsapp"></i> WhatsApp: +62 -----</p>
                     <p><i class="fas fa-phone"></i> Telepon: (021) 556-7890</p>
                     <p><i class="fas fa-envelope"></i> Email: info@gestunbysandra.com</p>
                 </div>
