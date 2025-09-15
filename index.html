@@ -1,0 +1,1985 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestun by Sandra - Solusi Cepat & Terpercaya</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <style>
+        /* ===== VARIABLES & RESET ===== */
+        :root {
+            /* Color Scheme - Blue Green Elegant */
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #9455d3 100%);
+            --secondary-gradient: linear-gradient(135deg, #ffd700 0%, #ffb347 50%, #ff8c42 100%);
+            --accent-gradient: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 50%, #fd79a8 100%);
+            --dark-gradient: linear-gradient(135deg, #0c4a6e 0%, #075985 100%);
+            --glass: rgba(255, 255, 255, 0.15);
+            --glass-border: rgba(255, 255, 255, 0.25);
+            --shadow-light: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+            --shadow-heavy: 0 20px 60px 0 rgba(0, 0, 0, 0.25);
+            --accent-color: #0ea5e9;
+            --accent-light: #38bdf8;
+            --accent-dark: #075985;
+            --green-accent: #10b981;
+            --green-light: #34d399;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ===== TYPOGRAPHY & BASE STYLES ===== */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #fff;
+            background: var(--primary-gradient);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        /* ===== BACKGROUND ELEMENTS ===== */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(56, 189, 248, 0.15) 0%, transparent 50%);
+            z-index: -2;
+        }
+
+        .sparkle {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: -1;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.15) 0px, transparent 50px),
+                radial-gradient(circle at 80% 70%, rgba(16, 185, 129, 0.1) 0px, transparent 50px),
+                radial-gradient(circle at 40% 80%, rgba(14, 165, 233, 0.15) 0px, transparent 50px);
+            animation: sparkle 12s infinite linear;
+        }
+
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--accent-gradient);
+            opacity: 0.1;
+            filter: blur(20px);
+            z-index: -1;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        /* ===== REUSABLE COMPONENTS ===== */
+        /* Glass effect */
+        .ultra-glass {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            box-shadow: var(--shadow-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ultra-glass::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 20px;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.15));
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: xor;
+            -webkit-mask-composite: xor;
+            pointer-events: none;
+        }
+
+        .accent-border {
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+        }
+
+        .accent-border::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: var(--accent-gradient);
+            border-radius: 22px;
+            z-index: -1;
+        }
+
+        /* Badges */
+        .hero-badge, .section-badge {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--accent-gradient);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .hero-badge {
+            margin-bottom: 25px;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .section-badge {
+            padding: 8px 18px;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+        }
+
+        /* Headings */
+        .hero h1 {
+            font-size: clamp(2.5rem, 7vw, 4rem);
+            font-weight: 800;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: rgba(0, 125, 183, 0.4);
+            margin-bottom: 20px;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        /* Subtitles */
+        .hero-subtitle {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 35px;
+            opacity: 0.95;
+            line-height: 1.6;
+            animation: fadeInUp 1s ease 0.6s both;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.95);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Buttons */
+        .btn-primary, .btn-whatsapp, .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--accent-gradient);
+            color: white;
+            box-shadow: 0 5px 20px rgba(14, 165, 233, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(14, 165, 233, 0.6);
+        }
+
+        .btn-whatsapp {
+            background: var(--green-accent);
+            color: white;
+            box-shadow: 0 5px 20px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            font-weight: 600;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent-light);
+            transform: translateY(-3px);
+        }
+
+        /* Section headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        /* ===== LAYOUT COMPONENTS ===== */
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            background: rgba(220, 3, 216, 0.9);
+            backdrop-filter: blur(20px);
+            padding: 10px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 25px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+            position: relative;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.95);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 8px 0;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-light);
+        }
+
+        .nav-links a:hover::before {
+            width: 100%;
+        }
+
+        /* Hero section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 80px 0;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.8s both;
+        }
+
+        /* Services section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            padding: 40px 30px;
+            border-radius: 18px;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--accent-gradient);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.05);
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .service-link:hover {
+            color: #fff;
+            gap: 12px;
+        }
+
+        /* How it works section */
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 35px 25px;
+            border-radius: 18px;
+            position: relative;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 35px;
+            height: 35px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .step-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--accent-light);
+        }
+
+        .step-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .step-card p {
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.6;
+        }
+
+        /* Video components - IMPROVED */
+        .video-container, .video-wrapper {
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            margin: 0 auto;
+            transition: all 0.3s ease;
+        }
+
+        .video-container:hover, .video-wrapper:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-container video, .video-wrapper video {
+            width: 100%;
+            display: block;
+            border-radius: 18px;
+            height: auto;
+        }
+
+        .video-demo-section {
+            margin: 50px 0;
+            text-align: center;
+        }
+        
+        .video-demo-header {
+            margin-bottom: 30px;
+        }
+        
+        .video-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .video-caption {
+            margin-top: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+        }
+
+        /* Video container in how-it-works section */
+        .how-it-works .video-container {
+            margin-bottom: 40px;
+        }
+
+        /* Gestun online section */
+        .gestun-online-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .gestun-card {
+            padding: 30px;
+            border-radius: 18px;
+            height: 100%;
+        }
+
+        .gestun-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .gestun-card ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .gestun-card ul li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .comparison-table th {
+            background-color: rgba(255, 255, 255, 0.1);
+            font-weight: 600;
+        }
+
+        .comparison-table tr:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Testimonials section */
+        .testimonials {
+            padding: 80px 0;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .testimonial-item {
+            border-radius: 18px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .testimonial-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 18px;
+        }
+
+        /* FAQ section */
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question {
+            padding: 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 0 20px 20px;
+        }
+
+        .faq-item.active .faq-toggle i {
+            transform: rotate(180deg);
+        }
+
+        .faq-toggle {
+            transition: transform 0.3s ease;
+        }
+
+        /* Contact section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .contact-info, .contact-form {
+            padding: 40px;
+        }
+
+        .contact-info h3, .contact-form h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            margin: 0 -10px;
+            padding: 20px 10px;
+            border-radius: 12px;
+        }
+
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--accent-gradient);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: white;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+            flex-shrink: 0;
+        }
+
+        .contact-text {
+            flex: 1;
+        }
+
+        .contact-text h4 {
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .contact-text p, .contact-text a {
+            color: rgba(255, 255, 255, 0.95);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-text a:hover {
+            color: var(--accent-light);
+        }
+
+        .whatsapp-options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .whatsapp-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 10px;
+            background: rgba(16, 185, 129, 0.15);
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-option:hover {
+            background: rgba(16, 185, 129, 0.25);
+        }
+
+        .whatsapp-option i {
+            color: var(--green-accent);
+        }
+
+        /* Form elements */
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 500;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-light);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+        }
+
+        .form-group input::placeholder, .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--accent-gradient);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(14, 165, 233, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 0 30px;
+            background: rgba(12, 74, 110, 0.4);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: rgba(255, 255, 255, 0.95);
+            text-decoration: none;
+            line-height: 1.8;
+            transition: color 0.3s ease;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-light);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.95);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .social-link:hover {
+            background: var(--accent-gradient);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-menu-btn span {
+            width: 22px;
+            height: 2px;
+            background: #fff;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Loading Animation */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            border-left: 3px solid var(--accent-light);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        /* Hover Effects */
+        .service-card, .step-card, .swiper-slide {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover, .step-card:hover, .swiper-slide:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes sparkle {
+            0% { background-position: 0% 0%, 0% 0%, 0% 0%; }
+            100% { background-position: 100px 100px, -100px 200px, 200px -100px; }
+        }
+
+        @keyframes bounce {
+            from { transform: translateY(0) rotate(0deg); }
+            to { transform: translateY(-5px) rotate(5deg); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(20px, 40px) rotate(5deg); }
+            50% { transform: translate(-30px, 20px) rotate(-5deg); }
+            75% { transform: translate(10px, -30px) rotate(3deg); }
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 25px;
+            }
+
+            .gestun-online-content {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .nav-links {
+                gap: 20px;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(144, 25, 151, 0.95);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 20px;
+                border-radius: 0 0 20px 20px;
+                gap: 15px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero-content {
+                padding: 40px 20px;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .contact-info, .contact-form {
+                padding: 30px 20px;
+            }
+
+            .swiper-button-next, .swiper-button-prev {
+                display: none;
+            }
+            
+            nav {
+                padding: 10px 20px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+
+            .comparison-table {
+                display: block;
+                overflow-x: auto;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Video responsive improvements */
+            .video-container, .video-wrapper {
+                margin-bottom: 30px;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .btn-primary, .btn-whatsapp, .btn-secondary {
+                padding: 12px 25px;
+                font-size: 0.9rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1rem;
+            }
+
+            /* Video improvements for mobile */
+            .video-demo-section {
+                margin: 30px 0;
+            }
+            
+            .video-caption {
+                font-size: 0.9rem;
+                margin-top: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sparkle Background -->
+    <div class="sparkle"></div>
+    
+    <!-- Floating Elements -->
+    <div class="floating-element" style="width: 300px; height: 300px; top: 10%; left: 5%; animation-delay: 0s;"></div>
+    <div class="floating-element" style="width: 200px; height: 200px; top: 70%; right: 5%; animation-delay: 2s;"></div>
+    <div class="floating-element" style="width: 250px; height: 250px; bottom: 10%; left: 20%; animation-delay: 4s;"></div>
+    
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav class="ultra-glass accent-border">
+            <div class="logo">Gestun by Sandra</div>
+            <ul class="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#services">Layanan</a></li>
+                <li><a href="#how-it-works">Cara Kerja</a></li>
+                <li><a href="#gestun-online">Gestun Online</a></li>
+                <li><a href="#testimonials">Testimoni</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content ultra-glass accent-border">
+                <div class="hero-badge">
+                    <i class="fas fa-lightning-bolt"></i> Solusi Tercepat & Terpercaya
+                </div>
+                <h1>Gestun by Sandra</h1>
+                <p class="hero-subtitle">
+                    Layanan Gestun by Sandra tercepat se-Indonesia! Proses instan 5 menit, tanpa ribet, dan dijamin aman. Solusi finansial tepat ketika Anda membutuhkan dana cepat.
+                </p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn-primary">
+                        <i class="fas fa-bolt"></i>
+                        Ajukan Sekarang
+                    </a>
+                    <a href="https://wa.me/628123456789" class="btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        Chat WhatsApp
+                    </a>
+                    <a href="#services" class="btn-secondary">
+                        <i class="fas fa-info-circle"></i>
+                        Info Layanan
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-badge">Layanan Unggulan</div>
+                <h2 class="section-title">Kenapa Memilih Gestun by Sandra?</h2>
+                <p class="section-subtitle">
+                    Kami memberikan solusi terbaik untuk kebutuhan dana cepat Anda dengan proses mudah, aman, dan terpercaya.
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card ultra-glass animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Proses Kilat 5 Menit</h3>
+                    <p>Dana cair dalam hitungan menit! Hanya dengan kartu kredit dan e-KTP, proses Gestun by Sandra selesai seketika.</p>
+                    <a href="#contact" class="service-link">
+                        Ajukan Sekarang <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card ultra-glass animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Keamanan Terjamin</h3>
+                    <p>Transaksi dijamin aman dan terpercaya. Data pribadi Anda terlindungi dengan sistem enkripsi tingkat tinggi.</p>
+                    <a href="#contact" class="service-link">
+                        Ajukan Sekarang <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card ultra-glass animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <h3>Bunga Competitif</h3>
+                    <p>Bunga terjangkau mulai dari 2% per bulan. Tidak ada biaya tersembunyi, semua transparan dan jelas.</p>
+                    <a href="#contact" class="service-link">
+                        Ajukan Sekarang <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card ultra-glass animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Limit Fleksibel</h3>
+                    <p>Dana tunai mulai dari Rp 1 juta hingga Rp 100 juta dapat dicairkan sesuai kebutuhan dan limit kartu kredit Anda.</p>
+                    <a href="#contact" class="service-link">
+                        Ajukan Sekarang <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card ultra-glass animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Layanan 24/7</h3>
+                    <p>Melayani kebutuhan Anda kapan saja, termasuk weekend dan hari libur. Tim kami siap membantu 24 jam.</p>
+                    <a href="#contact" class="service-link">
+                        Ajukan Sekarang <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card ultra-glass animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Jemput Antar Gratis</h3>
+                    <p>Khusus area Jakarta, kami memberikan layanan jemput dan antar kartu secara gratis tanpa biaya tambahan.</p>
+                    <a href="#contact" class="service-link">
+                        Ajukan Sekarang <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-badge">Proses</div>
+                <h2 class="section-title">Cara Mudah Mengajukan Gestun by Sandra</h2>
+                <p class="section-subtitle">
+                    Hanya 4 langkah mudah untuk mendapatkan dana tunai dari kartu kredit Anda. Proses cepat dan tanpa ribet.
+                </p>
+            </div>
+
+            <!-- Video Demonstrasi - IMPROVED -->
+            <div class="video-container ultra-glass animate-on-scroll">
+                <video controls poster="images/poster.jpg" preload="metadata">
+                    <source src="images/Gestun_by_sandra.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung pemutaran video.
+                </video>
+            </div>
+
+            <div class="steps-container">
+                <div class="step-card ultra-glass animate-on-scroll">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Hubungi Kami</h3>
+                    <p>Hubungi customer service kami via WhatsApp, telepon, atau isi form kontak.</p>
+                </div>
+
+                <div class="step-card ultra-glass animate-on-scroll">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3>Konfirmasi Data</h3>
+                    <p>Berikan informasi kartu kredit và data diri Anda. Proses verifikasi hanya beberapa menit.</p>
+                </div>
+
+                <div class="step-card ultra-glass animate-on-scroll">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Proses Gestun by Sandra</h3>
+                    <p>Tim kami akan melakukan proses gestun. Untuk area Jakarta, kami bisa jemput kartu Anda.</p>
+                </div>
+
+                <div class="step-card ultra-glass animate-on-scroll">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">
+                        <i class="fas fa-money-check"></i>
+                    </div>
+                    <h3>Dana Cair</h3>
+                    <p>Dana langsung ditransfer ke rekening Anda. Proses hanya 5-10 menit setelah persetujuan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gestun Online Section -->
+    <section id="gestun-online" class="gestun-online">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-badge">Layanan Modern</div>
+                <h2 class="section-title">Gestun Online by Sandra</h2>
+                <p class="section-subtitle">
+                    Solusi Modern Cairkan Limit Paylater dan CC Anda secara Online
+                </p>
+            </div>
+
+            <div class="ultra-glass animate-on-scroll" style="padding: 40px; margin-bottom: 30px;">
+                <h3 style="margin-bottom: 20px; color: #fff;">Apa Itu Gestun Online by Sandra?</h3>
+                <p style="color: rgba(255,255,255,0.95); line-height: 1.6; margin-bottom: 20px;">
+                    <strong>Gestun by Sandra</strong> adalah layanan pencairan limit digital menjadi uang tunai yang dilakukan secara online. Berbeda dengan pinjaman konvensional, gestun memanfaatkan limit yang sudah Anda miliki di platform tertentu, sehingga tidak menambah beban utang baru.
+                </p>
+            </div>
+
+            <!-- Video Demo - IMPROVED -->
+            <div class="video-demo-section animate-on-scroll">
+                <div class="video-demo-header">
+                    <h3 style="color: #fff; margin-bottom: 15px;">Tonton Demo Proses Gestun Online</h3>
+                    <p class="section-subtitle">Lihat bagaimana mudah dan cepatnya proses gestun online bersama kami</p>
+                </div>
+                <div class="video-wrapper ultra-glass">
+                    <video controls poster="images/poster.jpg" preload="metadata">
+                        <source src="images/baru.mp4" type="video/mp4">
+                        Browser Anda tidak mendukung pemutaran video.
+                    </video>
+                </div>
+                <p class="video-caption">Proses gestun online hanya membutuhkan waktu 5-10 menit saja</p>
+            </div>
+
+            <div class="gestun-online-content">
+                <div class="ultra-glass gestun-card animate-on-scroll">
+                    <h3>Keunggulan Gestun Paylater</h3>
+                    <p>Layanan gestun paylater khusus membantu Anda mencairkan limit dari berbagai aplikasi paylater populer seperti:</p>
+                    <ul>
+                        <li>GoPayLater (Gopay)</li>
+                        <li>IndoDana</li>
+                        <li>ShopeePayLater</li>
+                        <li>OVO PayLater</li>
+                        <li>Kredivo</li>
+                        <li>Dan lain-lain</li>
+                    </ul>
+                    <p>Keuntungan menggunakan gestun paylater:</p>
+                    <ul>
+                        <li>Proses cepat (10-30 menit)</li>
+                        <li>Tidak perlu verifikasi berbelit</li>
+                        <li>Bisa cairkan limit kecil maupun besar</li>
+                        <li>Dana langsung masuk ke rekening</li>
+                    </ul>
+                </div>
+
+                <div class="ultra-glass gestun-card animate-on-scroll">
+                    <h3>Keunggulan Gestun CC Online</h3>
+                    <p>Selain paylater, layanan gestun cc online juga semakin populer. Ini adalah alternatif pengelolaan dana digital yang praktis dan efisien.</p>
+                    <p>Beberapa kelebihan gestun cc online:</p>
+                    <ul>
+                        <li>Limit lebih besar (hingga puluhan juta)</li>
+                        <li>Proses validasi sederhana</li>
+                        <li>Support berbagai bank dan fintech</li>
+                        <li>Tidak perlu login pihak ketiga</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="ultra-glass animate-on-scroll" style="padding: 40px; margin-top: 30px;">
+                <h3 style="margin-bottom: 20px; color: #fff;">Perbedaan Gestun Online dengan Pinjaman</h3>
+                <p style="color: rgba(255,255,255,0.95); line-height: 1.6; margin-bottom: 20px;">
+                    Banyak yang bertanya, apa bedanya gestun online dengan pinjaman biasa? Berikut perbedaannya:
+                </p>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Aspek</th>
+                            <th>Gestun Online</th>
+                            <th>Pinjaman</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sumber Dana</td>
+                            <td>Limit yang sudah ada</td>
+                            <td>Dana baru</td>
+                        </tr>
+                        <tr>
+                            <td>Proses</td>
+                            <td>Cepat (menit-jam)</td>
+                            <td>Lama (hari-minggu)</td>
+                        </tr>
+                        <tr>
+                            <td>Bunga</td>
+                            <td>Biaya sekali</td>
+                            <td>Bunga berkelanjutan</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="ultra-glass animate-on-scroll" style="padding: 40px; margin-top: 30px;">
+                <h3 style="margin-bottom: 20px; color: #fff;">Tips Memilih Layanan Gestun Terpercaya</h3>
+                <p style="color: rgba(255,255,255,0.95); line-height: 1.6; margin-bottom: 20px;">
+                    Untuk menghindari penipuan, berikut ciri-ciri gestun online yang terpercaya:
+                </p>
+                <ul style="color: rgba(255,255,255,0.95); padding-left: 20px;">
+                    <li>Transparan tentang biaya sejak awal</li>
+                    <li>Tidak meminta informasi login/password</li>
+                    <li>Memiliki testimoni asli dari pelanggan</li>
+                    <li>Responsif dalam pelayanan</li>
+                    <li>Memberikan garansi proses</li>
+                </ul>
+            </div>
+
+            <div class="section-header animate-on-scroll" style="margin-top: 60px;">
+                <h3 class="section-title">Layanan Gestun Online Kami</h3>
+                <p class="section-subtitle">
+                    Kami menyediakan layanan gestun cc dan gestun paylater terbaik
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card ultra-glass animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <h3>Gestun Paylater</h3>
+                    <p>Kami membantu mencairkan limit paylater dari berbagai platform populer dengan proses cepat dan aman. Dana langsung masuk ke rekening Anda tanpa ribet.</p>
+                    <p><strong>Platform yang Didukung:</strong></p>
+                    <ul style="color: rgba(255,255,255,0.95); padding-left: 20px; margin-bottom: 15px;">
+                        <li>GoPayLater</li>
+                        <li>IndoDana</li>
+                        <li>ShopeePayLater</li>
+                        <li>OVO PayLater</li>
+                        <li>Blibli paylater</li>
+                        <li>LinkAja PayLater</li>
+                        <li>Akulaku</li>
+                        <li>Kredivo</li>
+                    </ul>
+                    <p><strong>Proses: 10-30 menit</strong></p>
+                    <a href="#contact" class="service-link">
+                        Konsultasi <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="service-card ultra-glass animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Gestun CC</h3>
+                    <p>Gestun CC Online - Pengelolaan dana digital dengan mudah dan cepat. Proses validasi sederhana tanpa perlu login pihak ketiga. Support berbagai platform digital.</p>
+                    <p><strong>Keunggulan:</strong></p>
+                    <ul style="color: rgba(255,255,255,0.95); padding-left: 20px; margin-bottom: 15px;">
+                        <li>Limit besar hingga puluhan juta</li>
+                        <li>Tanpa verifikasi rumit</li>
+                        <li>Cukup satu kali validasi</li>
+                        <li>Limit hingga Rp50 juta</li>
+                    </ul>
+                    <a href="#contact" class="service-link">
+                        Konsultasi <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-badge">Testimoni Pelanggan</div>
+                <h2 class="section-title">Apa Kata Mereka</h2>
+                <p class="section-subtitle">
+                    Bukti nyata kepuasan pelanggan yang sudah menggunakan layanan Gestun by Sandra.
+                </p>
+            </div>
+
+            <div class="testimonial-grid">
+                <div class="testimonial-item ultra-glass animate-on-scroll">
+                    <img src="images/Testimoni1.jpg" alt="Testimoni 1" class="testimonial-img">
+                </div>
+                <div class="testimonial-item ultra-glass animate-on-scroll">
+                    <img src="images/Testimoni2.jpg" alt="Testimoni 2" class="testimonial-img">
+                </div>
+                <div class="testimonial-item ultra-glass animate-on-scroll">
+                    <img src="images/Testimoni3.jpg" alt="Testimoni 3" class="testimonial-img">
+                </div>
+                <div class="testimonial-item ultra-glass animate-on-scroll">
+                    <img src="images/Testimoni4.jpg" alt="Testimoni 4" class="testimonial-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-badge">Pertanyaan</div>
+                <h2 class="section-title">Pertanyaan Umum</h2>
+                <p class="section-subtitle">
+                    Temukan jawaban atas pertanyaan yang sering diajukan tentang layanan Gestun by Sandra.
+                </p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item ultra-glass animate-on-scroll">
+                    <div class="faq-question">
+                        Apa itu Gestun by Sandra?
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        Gestun by Sandra adalah layanan penarikan dana tunai dari kartu kredit melalui mesin EDC. Dana yang ditarik akan dikenakan bunga sesuai dengan ketentuan bank penerbit kartu kredit.
+                    </div>
+                </div>
+
+                <div class="faq-item ultra-glass animate-on-scroll">
+                    <div class="faq-question">
+                        Berapa lama proses pencairan dananya?
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        Proses pencairan dana sangat cepat, hanya memakan waktu 5-10 menit setelah persetujuan. Kami menjamin dana akan langsung ditransfer ke rekening Anda.
+                    </div>
+                </div>
+
+                <div class="faq-item ultra-glass animate-on-scroll">
+                    <div class="faq-question">
+                        Apakah ada biaya tambahan selain bunga?
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        Tidak ada biaya tambahan apapun. Semua biaya sudah termasuk dalam bunga yang kompetitif. Kami transparan dalam hal biaya.
+                    </div>
+                </div>
+
+                <div class="faq-item ultra-glass animate-on-scroll">
+                    <div class="faq-question">
+                        Apakah data saya aman?
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        Ya, data pribadi Anda dijamin aman dan tidak akan disalahgunakan. Kami menggunakan sistem keamanan tingkat tinggi untuk melindungi informasi pribadi Anda.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-badge">Hubungi Kami</div>
+                <h2 class="section-title">Kami Siap Membantu Anda</h2>
+                <p class="section-subtitle">
+                    Tim customer service kami siap melayani Anda 24/7. Jangan ragu untuk menghubungi kami kapan saja.
+                </p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info ultra-glass animate-on-scroll">
+                    <h3>Informasi Kontak</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>WhatsApp</h4>
+                            <div class="whatsapp-options">
+                                <a href="https://wa.me/628123456789" target="_blank" class="whatsapp-option">
+                                    <i class="fab fa-whatsapp"></i>
+                                    +62 812-3456-789 (Customer Service)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Telepon</h4>
+                            <a href="tel:+62215567890">(021) 556-7890</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <a href="mailto:info@gestunbysandra.com">info@gestunbysandra.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Jam Operasional</h4>
+                            <p>24 Jam / 7 Hari</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form ultra-glass animate-on-scroll">
+                    <h3>Kirim Pesan</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap</label>
+                            <input type="text" id="name" name="name" placeholder="Masukkan nama lengkap" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Nomor WhatsApp</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Contoh: 08123456789" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="amount">Jumlah Dana yang Dibutuhkan</label>
+                            <select id="amount" name="amount" required>
+                                <option value="">Pilih jumlah</option>
+                                <option value="1-5">Rp 1 - 5 juta</option>
+                                <option value="5-10">Rp 5 - 10 juta</option>
+                                <option value="10-25">Rp 10 - 25 juta</option>
+                                <option value="25-50">Rp 25 - 50 juta</option>
+                                <option value="50-100">Rp 50 - 100 juta</option>
+                                <option value="100+">Rp 100 juta+</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Pesan (opsional)</label>
+                            <textarea id="message" name="message" placeholder="Tulis pesan tambahan di sini..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Kirim Pesan
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section animate-on-scroll">
+                    <h3>Gestun by Sandra</h3>
+                    <p>Layanan Gestun by Sandra tercepat se-Indonesia dengan proses instan 5 menit. Solusi terpercaya untuk kebutuhan dana darurat Anda.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/gestunbysandra" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/gestunbysandra" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/628123456789" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section animate-on-scroll">
+                    <h3>Layanan</h3>
+                    <p><a href="#services">Gestun by Sandra Instan</a></p>
+                    <p><a href="#gestun-online">Gestun Paylater</a></p>
+                    <p><a href="#gestun-online">Gestun CC Online</a></p>
+                    <p><a href="#services">Layanan 24 Jam</a></p>
+                </div>
+                
+                <div class="footer-section animate-on-scroll">
+                    <h3>Informasi</h3>
+                    <p><a href="#how-it-works">Cara Kerja</a></p>
+                    <p><a href="#gestun-online">Gestun Online</a></p>
+                    <p><a href="#testimonials">Testimoni</a></p>
+                    <p><a href="#faq">FAQ</a></p>
+                </div>
+                
+                <div class="footer-section animate-on-scroll">
+                    <h3>Kontak</h3>
+                    <p><i class="fab fa-whatsapp"></i> WhatsApp: +62 812-3456-789</p>
+                    <p><i class="fas fa-phone"></i> Telepon: (021) 556-7890</p>
+                    <p><i class="fas fa-envelope"></i> Email: info@gestunbysandra.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Gestun by Sandra. All rights reserved. | Solusi Cepat & Terpercaya</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        // Loading Screen
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
+            }, 1000);
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const phone = formData.get('phone');
+            const amount = formData.get('amount');
+            const message = formData.get('message');
+            
+            // Create WhatsApp message
+            const whatsappMessage = `Halo, saya ${encodeURIComponent(name)}. Saya ingin mengajukan gestun sebesar ${encodeURIComponent(amount)}. ${encodeURIComponent(message)}. Mohon info lebih lanjut.`;
+            
+            const whatsappURL = `https://wa.me/628123456789?text=${whatsappMessage}`;
+            
+            // Open WhatsApp
+            window.open(whatsappURL, '_blank');
+            
+            // Reset form
+            this.reset();
+            
+            // Show success notification
+            showNotification('Pesan berhasil dikirim! Kami akan segera menghubungi Anda.', 'success');
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                
+                // Animate hamburger icon
+                const spans = this.querySelectorAll('span');
+                spans.forEach(span => span.classList.toggle('active'));
+            });
+        }
+
+        // Notification function
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-info-circle'}"></i>
+                    <span>${message}</span>
+                </div>
+                <button class="notification-close" onclick="this.parentElement.remove()">
+                    <i class="fas fa-times"></i>
+                </button>
+            `;
+            
+            // Add styles for notification
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${type === 'success' ? 'var(--green-accent)' : 'var(--accent-color)'};
+                color: white;
+                padding: 15px 20px;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                z-index: 10000;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                animation: slideIn 0.3s ease;
+                max-width: 350px;
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                if (notification.parentElement) {
+                    notification.style.animation = 'slideOut 0.3s ease';
+                    setTimeout(() => notification.remove(), 300);
+                }
+            }, 5000);
+        }
+
+        // Add keyframes for notification animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+            .notification-content {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                flex: 1;
+            }
+            .notification-close {
+                background: none;
+                border: none;
+                color: white;
+                cursor: pointer;
+                font-size: 1rem;
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Add hover effect for service cards
+        const serviceCards = document.querySelectorAll('.service-card');
+        serviceCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-5px)';
+                card.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.2)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = 'var(--shadow-light)';
+            });
+        });
+
+        // Add animation for mobile menu icon
+        const mobileMenuSpans = document.querySelectorAll('.mobile-menu-btn span');
+        if (mobileMenuSpans.length > 0) {
+            document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+                mobileMenuSpans[0].style.transform = this.classList.contains('active') ? 'rotate(45deg) translate(5px, 5px)' : '';
+                mobileMenuSpans[1].style.opacity = this.classList.contains('active') ? '0' : '1';
+                mobileMenuSpans[2].style.transform = this.classList.contains('active') ? 'rotate(-45deg) translate(7px, -6px)' : '';
+            });
+        }
+
+        // Lazy loading for images
+        if ('IntersectionObserver' in window) {
+            const lazyImageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const lazyImage = entry.target;
+                        lazyImage.src = lazyImage.dataset.src;
+                        lazyImage.classList.remove('lazy');
+                        lazyImageObserver.unobserve(lazyImage);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('img[data-src]').forEach(lazyImage => {
+                lazyImageObserver.observe(lazyImage);
+            });
+        }
+
+        // Add subtle parallax effect to hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.backgroundPosition = `center ${scrolled * 0.5}px`;
+            }
+        });
+
+        // Add click outside to close mobile menu
+        document.addEventListener('click', (e) => {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (navLinks && navLinks.classList.contains('active') && 
+                !e.target.closest('.nav-links') && 
+                !e.target.closest('.mobile-menu-btn')) {
+                navLinks.classList.remove('active');
+                if (mobileMenuBtn) {
+                    mobileMenuBtn.classList.remove('active');
+                    const spans = mobileMenuBtn.querySelectorAll('span');
+                    spans[0].style.transform = '';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = '';
+                }
+            }
+        });
+
+        // Video hover effect
+        const videos = document.querySelectorAll('video');
+        const videoContainers = document.querySelectorAll('.video-container, .video-wrapper');
+        
+        videoContainers.forEach(container => {
+            container.addEventListener('mouseenter', () => {
+                container.style.transform = 'translateY(-5px)';
+                container.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.3)';
+            });
+            
+            container.addEventListener('mouseleave', () => {
+                container.style.transform = 'translateY(0)';
+                container.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.2)';
+            });
+        });
+    </script>
+</body>
+</html>
