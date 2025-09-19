@@ -9,7 +9,6 @@
     <style>
         /* ===== VARIABLES & RESET ===== */
         :root {
-            /* Color Scheme - Blue Green Elegant */
             --primary-gradient: linear-gradient(135deg, #667eea 0%, #9455d3 100%);
             --secondary-gradient: linear-gradient(135deg, #ffd700 0%, #ffb347 50%, #ff8c42 100%);
             --accent-gradient: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 50%, #fd79a8 100%);
@@ -96,7 +95,6 @@
         }
 
         /* ===== REUSABLE COMPONENTS ===== */
-        /* Glass effect */
         .ultra-glass {
             background: var(--glass);
             backdrop-filter: blur(20px);
@@ -371,7 +369,7 @@
             animation: fadeInUp 1s ease 0.8s both;
         }
 
-        /* Testimonials section - UPDATED */
+        /* Testimonials section */
         .testimonials {
             padding: 80px 0;
         }
@@ -418,7 +416,7 @@
             background: var(--accent-light);
         }
 
-        /* Video components - IMPROVED */
+        /* Video components */
         .video-demo-section {
             margin: 50px 0;
             text-align: center;
@@ -579,11 +577,11 @@
         
         /* Styling untuk video portrait */
         .portrait-video {
-            max-height: 600px;        /* batasi tinggi */
-            width: auto;              /* biar proporsional */
-            max-width: 100%;          /* jangan melebihi container */
+            max-height: 600px;
+            width: auto;
+            max-width: 100%;
             display: block;
-            margin: 0 auto;           /* center */
+            margin: 0 auto;
             border-radius: 18px;
         }
 
@@ -641,7 +639,7 @@
             background-color: rgba(255, 255, 255, 0.05);
         }
 
-        /* FAQ section */
+        /* FAQ section - PERBAIKAN DROPDOWN */
         .faq-container {
             max-width: 900px;
             margin: 0 auto;
@@ -664,6 +662,7 @@
             justify-content: space-between;
             align-items: center;
             transition: all 0.3s ease;
+            position: relative;
         }
 
         .faq-question:hover {
@@ -674,13 +673,14 @@
             padding: 0 20px;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
+            transition: max-height 0.5s ease, padding 0.5s ease;
             color: rgba(255, 255, 255, 0.95);
             line-height: 1.6;
+            background: rgba(0, 0, 0, 0.1);
         }
 
         .faq-item.active .faq-answer {
-            max-height: 300px;
+            max-height: 500px;
             padding: 0 20px 20px;
         }
 
@@ -690,9 +690,11 @@
 
         .faq-toggle {
             transition: transform 0.3s ease;
+            color: var(--accent-light);
+            font-size: 1.2rem;
         }
 
-        /* Contact section - UPDATED */
+        /* Contact section */
         .contact-container {
             display: grid;
             grid-template-columns: 1fr;
@@ -864,21 +866,45 @@
             font-size: 0.9rem;
         }
 
-        /* Mobile Menu */
+        /* Mobile Menu - PERBAIKAN */
         .mobile-menu-btn {
             display: none;
             flex-direction: column;
-            gap: 4px;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
             cursor: pointer;
-            padding: 8px;
+            z-index: 1001;
+            position: relative;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            padding: 5px;
         }
 
         .mobile-menu-btn span {
-            width: 22px;
-            height: 2px;
+            width: 25px;
+            height: 3px;
             background: #fff;
-            border-radius: 2px;
+            border-radius: 3px;
             transition: all 0.3s ease;
+            transform-origin: center;
+            display: block;
+            margin: 2px 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+            transform: scale(0);
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
         }
 
         /* Animations */
@@ -999,6 +1025,8 @@
                 padding: 20px;
                 border-radius: 0 0 20px 20px;
                 gap: 15px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+                z-index: 999;
             }
 
             .nav-links.active {
@@ -1147,7 +1175,7 @@
                         <i class="fas fa-bolt"></i>
                         Ajukan Sekarang
                     </a>
-                    <a href="https://wa.me/628123456789" class="btn-whatsapp" target="_blank">
+                    <a href="https://wa.me/+6285285969934" class="btn-whatsapp" target="_blank">
                         <i class="fab fa-whatsapp"></i>
                         Chat WhatsApp
                     </a>
@@ -1160,7 +1188,7 @@
         </div>
     </section>
 
-    <!-- Testimonials Section - MOVED TO TOP -->
+    <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
         <div class="container">
             <div class="section-header animate-on-scroll">
@@ -1205,13 +1233,21 @@
                             </div>
                         </div>
                     </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-slide">
+                            <img src="images/Testimoni5.jpg" alt="Testimoni 5" class="testimonial-img">
+                            <div class="testimonial-caption">
+                                "Kurang apalagi, buruan dimana lagi tempat paling terpercaya selain di Gestun By Riki."
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
 
-    <!-- Video Demo Section  -->
+    <!-- Video Demo Section -->
     <section id="video-demo" class="video-demo-section">
         <div class="container">
             <div class="section-header animate-on-scroll">
@@ -1313,7 +1349,7 @@
         </div>
     </section>
 
-        <!-- How It Works Section -->
+    <!-- How It Works Section -->
     <section id="how-it-works" class="how-it-works">
         <div class="container">
             <div class="section-header animate-on-scroll">
@@ -1324,12 +1360,11 @@
                 </p>
             </div>
 
-            <!-- Video Demonstrasi - IMPROVED -->
+            <!-- Video Demonstrasi -->
             <video class="portrait-video" controls playsinline>
                 <source src="images/Output.mp4" type="video/mp4">
                 Browser Anda tidak mendukung pemutaran video.
             </video>
-
 
             <div class="steps-container">
                 <div class="step-card ultra-glass animate-on-scroll">
@@ -1406,7 +1441,7 @@
                         <li>Proses cepat (10-30 menit)</li>
                         <li>Tidak perlu verifikasi berbelit</li>
                         <li>Bisa cairkan limit kecil maupun besar</li>
-                        <li>Dana langsung masuk ke rekening</li>
+                        <li>Dana langsung masuk to rekening</li>
                     </ul>
                 </div>
 
@@ -1577,7 +1612,7 @@
         </div>
     </section>
 
-    <!-- Contact Section - UPDATED -->
+    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header animate-on-scroll">
@@ -1599,9 +1634,9 @@
                         <div class="contact-text">
                             <h4>WhatsApp</h4>
                             <div class="whatsapp-options">
-                                <a href="https://wa.me/628123456789" target="_blank" class="whatsapp-option">
+                                <a href="https://wa.me/6285285969934" target="_blank" class="whatsapp-option">
                                     <i class="fab fa-whatsapp"></i>
-                                    +62 812-3456-789 (Customer Service)
+                                    +62 852-8596-9934 (Customer Service)
                                 </a>
                             </div>
                         </div>
@@ -1613,10 +1648,9 @@
                         </div>
                         <div class="contact-text">
                             <h4>Telepon</h4>
-                            <a href="tel:+62215567890">(021) 556-7890</a>
+                            <a href="tel:+6285285969934">(021) 85285969934</a>
                         </div>
                     </div>
-                    
                     
                     <div class="contact-item">
                         <div class="contact-icon">
@@ -1628,7 +1662,7 @@
                         </div>
                     </div>
 
-                    <a href="https://wa.me/628123456789" class="btn-whatsapp big-whatsapp-btn" target="_blank">
+                    <a href="https://wa.me/6285285969934" class="btn-whatsapp big-whatsapp-btn" target="_blank">
                         <i class="fab fa-whatsapp"></i>
                         Hubungi via WhatsApp
                     </a>
@@ -1647,7 +1681,7 @@
                     <div class="social-links">
                         <a href="https://facebook.com/GestunByRiki" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://instagram.com/GestunByRIki" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/628123456789" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://wa.me/6285285969934" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 
@@ -1655,7 +1689,7 @@
                     <h3>Layanan</h3>
                     <p><a href="#services">Gestun by Riki Instan</a></p>
                     <p><a href="#gestun-online">Gestun Paylater</a></p>
-                    <p><a href="#gestun-online">Gestun CC Online</a></p>
+                    <p><a href#gestun-online">Gestun CC Online</a></p>
                     <p><a href="#services">Layanan 24 Jam</a></p>
                 </div>
                 
@@ -1669,7 +1703,7 @@
                 
                 <div class="footer-section animate-on-scroll">
                     <h3>Kontak</h3>
-                    <p><i class="fab fa-whatsapp"></i> WhatsApp: +62 812-3456-789</p>
+                    <p><i class="fab fa-whatsapp"></i> WhatsApp: +62 852-8596-9934</p>
                     <p><i class="fas fa-phone"></i> Telepon: (021) 556-7890</p>
                 </div>
             </div>
@@ -1709,15 +1743,29 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
+                    
+                    // Close mobile menu when a link is clicked
+                    if (navLinks.classList.contains('active')) {
+                        mobileMenuBtn.classList.remove('active');
+                        navLinks.classList.remove('active');
+                    }
                 }
             });
         });
 
-        // FAQ Accordion
+        // FAQ Accordion - PERBAIKAN DROPDOWN
         const faqItems = document.querySelectorAll('.faq-item');
         faqItems.forEach(item => {
             const question = item.querySelector('.faq-question');
             question.addEventListener('click', () => {
+                // Close other open FAQs
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current FAQ
                 item.classList.toggle('active');
             });
         });
@@ -1745,17 +1793,22 @@
         const navLinks = document.querySelector('.nav-links');
 
         if (mobileMenuBtn) {
-            mobileMenuBtn.addEventListener('click', function() {
+            mobileMenuBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
                 this.classList.toggle('active');
                 navLinks.classList.toggle('active');
-                
-                // Animate hamburger icon
-                const spans = this.querySelectorAll('span');
-                spans[0].style.transform = this.classList.contains('active') ? 'rotate(45deg) translate(5px, 5px)' : '';
-                spans[1].style.opacity = this.classList.contains('active') ? '0' : '1';
-                spans[2].style.transform = this.classList.contains('active') ? 'rotate(-45deg) translate(7px, -6px)' : '';
             });
         }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (navLinks && navLinks.classList.contains('active') && 
+                !e.target.closest('.nav-links') && 
+                !e.target.closest('.mobile-menu-btn')) {
+                mobileMenuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
 
         // Initialize testimonial slider
         const testimonialSlider = new Swiper('.testimonial-slider', {
@@ -1795,25 +1848,6 @@
                 card.style.transform = 'translateY(0)';
                 card.style.boxShadow = 'var(--shadow-light)';
             });
-        });
-
-        // Add click outside to close mobile menu
-        document.addEventListener('click', (e) => {
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const navLinks = document.querySelector('.nav-links');
-            
-            if (navLinks && navLinks.classList.contains('active') && 
-                !e.target.closest('.nav-links') && 
-                !e.target.closest('.mobile-menu-btn')) {
-                navLinks.classList.remove('active');
-                if (mobileMenuBtn) {
-                    mobileMenuBtn.classList.remove('active');
-                    const spans = mobileMenuBtn.querySelectorAll('span');
-                    spans[0].style.transform = '';
-                    spans[1].style.opacity = '1';
-                    spans[2].style.transform = '';
-                }
-            }
         });
 
         // Video hover effect
