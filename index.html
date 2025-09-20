@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestun by Riki - Solusi Cepat & Terpercaya</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
-   <style>
-    :root {
-            /* Calm Color Palette from the second file */
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Gestun by Riki - Solusi Cepat &amp; Terpercaya</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <style>
+        /* ===== CSS RESET & VARIABLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
             --primary-navy: #1a365d;
             --primary-blue: #2d5a87;
             --accent-teal: #00a8a8;
@@ -20,1207 +25,844 @@
             --white: #ffffff;
             --success: #10b981;
             --warning: #f59e0b;
-            
-            /* Updated variables for the first file structure */
-            --primary-color: var(--primary-navy);
-            --secondary-color: var(--primary-blue);
-            --accent-color: var(--accent-teal);
-            --accent-light: var(--accent-green);
-            --accent-dark: #0d7a68;
-            --text-color: var(--dark-gray);
-            --text-muted: var(--medium-gray);
-            --glass: rgba(255, 255, 255, 0.8);
-            --glass-border: rgba(0, 168, 168, 0.2);
-            --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-heavy: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            --green-accent: var(--success);
-            --green-light: #34d399;
-            --background-gradient: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 100%);
-            
-            /* Typography */
             --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
             --font-weight-normal: 400;
             --font-weight-medium: 500;
             --font-weight-semibold: 600;
             --font-weight-bold: 700;
-            
-            /* Spacing */
             --spacing-xs: 0.5rem;
             --spacing-sm: 1rem;
             --spacing-md: 1.5rem;
             --spacing-lg: 2rem;
             --spacing-xl: 3rem;
             --spacing-2xl: 4rem;
-            
-            /* Border radius */
             --radius-sm: 8px;
             --radius-md: 12px;
             --radius-lg: 16px;
             --radius-xl: 24px;
+            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+                         0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                         0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+                         0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                         0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* ===== TYPOGRAPHY & BASE STYLES ===== */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-
+        /* ===== BASE STYLES ===== */
         body {
             font-family: var(--font-primary);
             line-height: 1.6;
-            color: var(--text-color);
-            background: var(--background-gradient);
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
+            color: var(--dark-gray);
+            background-color: var(--white);
         }
-
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 var(--spacing-sm);
         }
-
-        section {
-            padding: 80px 0;
-            position: relative;
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 var(--spacing-lg);
+            }
         }
+        /* Typography */
+        .text-primary { color: var(--primary-navy); }
+        .text-secondary { color: var(--medium-gray); }
+        .text-accent { color: var(--accent-teal); }
+        .text-white { color: var(--white); }
+        .text-sm { font-size: 0.875rem; }
+        .text-base { font-size: 1rem; }
+        .text-lg { font-size: 1.125rem; }
+        .text-xl { font-size: 1.25rem; }
+        .text-2xl { font-size: 1.5rem; }
+        .text-3xl { font-size: 1.875rem; }
+        .text-4xl { font-size: 2.25rem; }
+        .text-5xl { font-size: 3rem; }
+        .font-medium { font-weight: var(--font-weight-medium); }
+        .font-semibold { font-weight: var(--font-weight-semibold); }
+        .font-bold { font-weight: var(--font-weight-bold); }
 
-        /* ===== BACKGROUND ELEMENTS ===== */
-        .sparkle {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: -1;
-            background-image: 
-                radial-gradient(circle at 20% 30%, rgba(0, 168, 168, 0.1) 0px, transparent 50px),
-                radial-gradient(circle at 80% 70%, rgba(45, 90, 135, 0.1) 0px, transparent 50px),
-                radial-gradient(circle at 40% 80%, rgba(22, 160, 133, 0.1) 0px, transparent 50px);
-            animation: sparkle 12s infinite linear;
-        }
-
-        .floating-element {
-            position: absolute;
-            border-radius: 50%;
-            background: var(--accent-color);
-            opacity: 0.1;
-            filter: blur(20px);
-            z-index: -1;
-            animation: float 15s infinite ease-in-out;
-        }
-
-        /* ===== REUSABLE COMPONENTS ===== */
-        .ultra-glass {
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-light);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .ultra-glass::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: var(--radius-lg);
-            padding: 1px;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.15));
-            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            mask-composite: xor;
-            -webkit-mask-composite: xor;
-            pointer-events: none;
-        }
-
-        .accent-border {
-            border: 2px solid transparent;
-            background-clip: padding-box;
-            position: relative;
-        }
-
-        .accent-border::after {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: var(--accent-color);
-            border-radius: calc(var(--radius-lg) + 4px);
-            z-index: -1;
-        }
-
-        /* Badges */
-        .hero-badge, .section-badge {
-            display: inline-block;
-            padding: 10px 20px;
-            background: var(--accent-color);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            backdrop-filter: blur(10px);
-            color: rgba(255, 255, 255, 0.95);
-        }
-
-        .hero-badge {
-            margin-bottom: 25px;
-            animation: fadeInUp 1s ease 0.2s both;
-        }
-
-        .section-badge {
-            padding: 8px 18px;
-            font-size: 0.85rem;
-            margin-bottom: 15px;
-        }
-
-        /* Headings */
-        .hero h1 {
-            font-size: clamp(2.5rem, 7vw, 4rem);
-            font-weight: 800;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title {
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 800;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            line-height: 1.2;
-        }
-
-        /* Subtitles */
-        .hero-subtitle {
-            font-size: 1.2rem;
-            font-weight: 400;
-            margin-bottom: 35px;
-            opacity: 0.95;
-            line-height: 1.6;
-            animation: fadeInUp 1s ease 0.6s both;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            color: var(--text-muted);
-        }
-
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        /* Buttons */
-        .btn-primary, .btn-whatsapp, .btn-secondary {
+        /* ===== COMPONENTS ===== */
+        .btn {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 15px 30px;
+            justify-content: center;
+            gap: var(--spacing-xs);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--radius-lg);
+            font-weight: var(--font-weight-semibold);
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            border: none;
+            transition: all 0.2s ease;
             cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            min-height: 48px;
         }
-
         .btn-primary {
-            background: var(--accent-color);
-            color: white;
-            box-shadow: 0 5px 20px rgba(0, 168, 168, 0.4);
+            background-color: var(--primary-navy);
+            color: var(--white);
         }
-
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 168, 168, 0.6);
-            background: var(--accent-light);
+            background-color: var(--primary-blue);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
         }
-
-        .btn-whatsapp {
-            background: var(--green-accent);
-            color: white;
-            box-shadow: 0 5px 20px rgba(16, 185, 129, 0.4);
-            padding: 18px 35px;
-            font-size: 1.2rem;
+        .btn-accent {
+            background-color: var(--accent-teal);
+            color: var(--white);
         }
-
-        .btn-whatsapp:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.6);
-            background: var(--green-light);
+        .btn-accent:hover {
+            background-color: var(--accent-green);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
         }
-
         .btn-secondary {
-            background: transparent;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-            backdrop-filter: blur(10px);
-            font-weight: 600;
+            background-color: transparent;
+            color: var(--accent-teal);
+            border: 2px solid var(--accent-teal);
         }
-
         .btn-secondary:hover {
-            background: rgba(26, 54, 93, 0.1);
-            border-color: var(--accent-color);
-            transform: translateY(-3px);
+            background-color: var(--accent-teal);
+            color: var(--white);
+        }
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-navy);
+            border: 2px solid var(--primary-navy);
+        }
+        .btn-outline:hover {
+            background-color: var(--primary-navy);
+            color: var(--white);
+        }
+        .btn-whatsapp {
+            background-color: var(--success);
+            color: var(--white);
+            padding: var(--spacing-md) var(--spacing-lg);
+            font-size: 1.125rem;
+        }
+        .btn-whatsapp:hover {
+            background-color: #059669;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        .card {
+            background-color: var(--white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        .badge {
+            display: inline-block;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            background-color: var(--light-blue);
+            color: var(--primary-navy);
+            border-radius: var(--radius-xl);
+            font-size: 0.875rem;
+            font-weight: var(--font-weight-semibold);
         }
 
-        /* Section headers */
+        /* ===== CUSTOM CLASSES (Glass & Accent) ===== */
+        .ultra-glass {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+        }
+        .accent-border {
+            border: 1px solid var(--accent-teal);
+        }
+
+        /* ===== LAYOUT ===== */
+        section {
+            padding: var(--spacing-2xl) 0;
+        }
         .section-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: var(--spacing-2xl);
+        }
+        .section-title {
+            font-size: clamp(1.875rem, 4vw, 3rem);
+            font-weight: var(--font-weight-bold);
+            color: var(--primary-navy);
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.2;
+        }
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--medium-gray);
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        /* ===== LAYOUT COMPONENTS ===== */
-        /* Header & Navigation */
+        /* ===== GRID SYSTEM ===== */
+        .grid {
+            display: grid;
+            gap: var(--spacing-lg);
+        }
+        .grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+        .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+        .grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+        /* Kolom fleksibel tambahan */
+        .grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+        @media (max-width: 768px) {
+            .grid-cols-2, .grid-cols-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .grid-cols-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* ===== HEADER ===== */
         header {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
+            background-color: var(--white);
+            border-bottom: 1px solid #e2e8f0;
             z-index: 1000;
-            padding: 15px 0;
             transition: all 0.3s ease;
         }
-
         header.scrolled {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            padding: 10px 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-md);
         }
-
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 25px;
+            padding: var(--spacing-sm) 0;
         }
-
         .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            letter-spacing: -0.02em;
-            position: relative;
+            font-size: 1.5rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--primary-navy);
         }
-
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 25px;
+            gap: var(--spacing-lg);
         }
-
         .nav-links a {
-            color: var(--text-muted);
+            color: var(--medium-gray);
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
+            font-weight: var(--font-weight-medium);
             position: relative;
-            padding: 8px 0;
         }
-
-        .nav-links a::before {
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-navy);
+        }
+        .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent-color);
+            bottom: -4px; left: 0;
+            width: 0; height: 2px;
+            background-color: var(--accent-teal);
             transition: width 0.3s ease;
         }
-
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
-
-        .nav-links a:hover::before {
+        .nav-links a:hover::after {
             width: 100%;
         }
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 4px;
+            width: 32px; height: 32px;
+            cursor: pointer;
+        }
+        .mobile-menu-btn span {
+            width: 100%; height: 2px;
+            background-color: var(--primary-navy);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        @media (max-width: 768px) {
+            .mobile-menu-btn { display: flex; }
+            .nav-links {
+                position: fixed;
+                top: 0; right: -100%;
+                width: 280px; height: 100vh;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: var(--spacing-2xl) var(--spacing-lg);
+                box-shadow: 0 20px 25px rgba(0,0,0,0.1);
+                transition: right 0.3s ease;
+            }
+            .nav-links.active { right: 0; }
+            .nav-links a {
+                padding: var(--spacing-sm) 0;
+                border-bottom: 1px solid #e2e8f0;
+                font-size: 1.125rem;
+            }
+            .mobile-menu-btn.active span:nth-child(1) {
+                transform: rotate(45deg) translate(6px, 6px);
+            }
+            .mobile-menu-btn.active span:nth-child(2) {
+                opacity: 0;
+            }
+            .mobile-menu-btn.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(6px, -6px);
+            }
+        }
 
-        /* Hero section */
+        /* ===== HERO SECTION ===== */
         .hero {
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 100%);
+            padding: calc(80px + var(--spacing-2xl)) 0 var(--spacing-2xl);
             min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            padding: 80px 0;
         }
-
         .hero-content {
             text-align: center;
-            color: var(--text-color);
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 50px 40px;
-            position: relative;
-            z-index: 2;
         }
-
+        .hero h1 {
+            font-size: clamp(2.25rem, 6vw, 4rem);
+            font-weight: var(--font-weight-bold);
+            color: var(--primary-navy);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.1;
+        }
+        .hero-subtitle {
+            font-size: 1.125rem;
+            color: var(--medium-gray);
+            margin-bottom: var(--spacing-xl);
+            line-height: 1.6;
+        }
         .hero-cta {
             display: flex;
-            gap: 15px;
+            gap: var(--spacing-sm);
             justify-content: center;
             flex-wrap: wrap;
-            animation: fadeInUp 1s ease 0.8s both;
+        }
+        @media (max-width: 640px) {
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+            .hero-cta .btn {
+                width: 100%; max-width: 280px;
+            }
         }
 
-        /* Testimonials section */
+        /* ===== TESTIMONIALS ===== */
         .testimonials {
-            padding: 80px 0;
             background-color: var(--light-gray);
         }
-
-        .testimonial-slider {
-            width: 100%;
-            padding: 30px 0 60px;
-        }
-
         .testimonial-slide {
             text-align: center;
-            padding: 20px;
+            padding: var(--spacing-sm);
         }
-
         .testimonial-img {
             width: 100%;
             max-width: 400px;
             height: auto;
-            border-radius: 15px;
-            border: 3px solid rgba(0, 0, 0, 0.1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            margin: 0 auto 20px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            margin: 0 auto var(--spacing-md);
             display: block;
         }
-
         .testimonial-caption {
-            background: rgba(255, 255, 255, 0.8);
-            color: var(--text-color);
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 1rem;
+            background-color: var(--white);
+            color: var(--dark-gray);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            font-style: italic;
             max-width: 500px;
             margin: 0 auto;
-            box-shadow: var(--shadow-light);
+            box-shadow: var(--shadow-sm);
         }
+        .swiper-pagination-bullet { background-color: var(--medium-gray); opacity: 0.3; }
+        .swiper-pagination-bullet-active { background-color: var(--accent-teal); opacity: 1; }
 
-        .swiper-pagination-bullet {
-            background: rgba(0, 0, 0, 0.3);
-            opacity: 1;
-            width: 12px;
-            height: 12px;
-        }
-
-        .swiper-pagination-bullet-active {
-            background: var(--accent-color);
-        }
-
-        /* Video components */
-        .video-demo-section {
-            margin: 50px 0;
-            text-align: center;
-        }
-        
-        .video-demo-header {
-            margin-bottom: 30px;
-        }
-        
+        /* ===== VIDEO DEMO ===== */
         .video-wrapper {
             max-width: 800px;
             margin: 0 auto;
-            border-radius: 18px;
+            border-radius: var(--radius-lg);
             overflow: hidden;
             box-shadow: var(--shadow-lg);
             transition: all 0.3s ease;
         }
-
         .video-wrapper:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
             box-shadow: var(--shadow-xl);
         }
-        
-        .video-wrapper video {
-            width: 100%;
-            display: block;
-            border-radius: 18px;
-            height: auto;
-        }
-        
-        .video-caption {
-            margin-top: 20px;
-            color: var(--text-muted);
-            font-size: 1.1rem;
-        }
-
-        /* Services section */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .service-card {
-            padding: 40px 30px;
-            border-radius: var(--radius-lg);
-            transition: all 0.3s ease;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            background: var(--white);
-            box-shadow: var(--shadow-light);
-            border: 1px solid #e2e8f0;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--accent-color);
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            color: white;
-            margin-bottom: 25px;
-            transition: transform 0.3s ease;
-        }
-
-        .service-card:hover .service-icon {
-            transform: scale(1.05);
-            background: var(--accent-light);
-        }
-
-        .service-card h3 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-
-        .service-card p {
-            font-size: 1rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin-bottom: 20px;
-            flex-grow: 1;
-        }
-
-        .service-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .service-link:hover {
-            color: var(--accent-light);
-            gap: 12px;
-        }
-
-        /* How it works section */
-        .steps-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 50px;
-        }
-
-        .step-card {
-            text-align: center;
-            padding: 35px 25px;
-            border-radius: var(--radius-lg);
-            position: relative;
-            transition: all 0.3s ease;
-            height: 100%;
-            background: var(--white);
-            box-shadow: var(--shadow-light);
-            border: 1px solid #e2e8f0;
-        }
-
-        .step-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .step-number {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 35px;
-            height: 35px;
-            background: var(--accent-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: white;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .step-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--accent-color);
-        }
-
-        .step-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 12px;
-            color: var(--primary-color);
-            font-weight: 700;
-        }
-
-        .step-card p {
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        /* Video container in how-it-works section */
-        .how-it-works .video-container {
-            margin-bottom: 40px;
-        }
-        
-        /* Styling untuk video portrait */
+        .video-wrapper video { width: 100%; display: block; }
+        .video-caption { margin-top: var(--spacing-md); color: var(--medium-gray); text-align: center; }
         .portrait-video {
             max-height: 600px;
             width: auto;
             max-width: 100%;
             display: block;
-            margin: 0 auto;
+            margin: 0 auto var(--spacing-lg);
             border-radius: var(--radius-lg);
             box-shadow: var(--shadow-lg);
         }
 
-        /* Gestun online section */
-        .gestun-online-content {
+        /* ===== SERVICES ===== */
+        .services {
+            /* container uses grid below */
+        }
+        .services-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 50px;
+            gap: var(--spacing-lg);
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         }
-
-        .gestun-card {
-            padding: 30px;
+        .service-card {
+            background-color: var(--white);
             border-radius: var(--radius-lg);
-            height: 100%;
-            background: var(--white);
-            box-shadow: var(--shadow-light);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-sm);
             border: 1px solid #e2e8f0;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        .service-icon {
+            width: 64px; height: 64px;
+            background-color: var(--accent-teal);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-bottom: var(--spacing-md);
+            transition: all 0.3s ease;
+        }
+        .service-card:hover .service-icon {
+            background-color: var(--accent-green);
+            transform: scale(1.05);
+        }
+        .service-card h3 {
+            font-size: 1.125rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--primary-navy);
+            margin-bottom: var(--spacing-sm);
+        }
+        .service-card p {
+            color: var(--medium-gray);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.6;
+        }
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            color: var(--accent-teal);
+            text-decoration: none;
+            font-weight: var(--font-weight-semibold);
+            transition: all 0.2s ease;
+        }
+        .service-link:hover {
+            color: var(--accent-green);
+            gap: var(--spacing-sm);
         }
 
-        .gestun-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-            font-weight: 700;
+        /* ===== HOW IT WORKS ===== */
+        .how-it-works {
+            background-color: var(--light-gray);
         }
-
-        .gestun-card ul {
-            padding-left: 20px;
-            margin-bottom: 20px;
-            color: var(--text-muted);
+        .portrait-video {
+            margin-bottom: var(--spacing-lg);
         }
-
-        .gestun-card ul li {
-            margin-bottom: 10px;
+        .steps-container {
+            display: grid;
+            gap: var(--spacing-lg);
+        }
+        @media (min-width: 768px) {
+            .steps-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 1024px) {
+            .steps-container {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        .step-card {
+            text-align: center;
+            position: relative;
+            background-color: var(--white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-sm);
+        }
+        .step-number {
+            position: absolute;
+            top: -16px; left: 50%;
+            transform: translateX(-50%);
+            width: 32px; height: 32px;
+            background-color: var(--accent-teal);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: var(--font-weight-bold);
+            color: var(--white);
+            font-size: 0.875rem;
+        }
+        .step-icon {
+            font-size: 2rem;
+            color: var(--primary-navy);
+            margin-bottom: var(--spacing-md);
+        }
+        .step-card h3 {
+            font-size: 1.125rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--primary-navy);
+            margin-bottom: var(--spacing-sm);
+        }
+        .step-card p {
+            color: var(--medium-gray);
             line-height: 1.6;
         }
 
+        /* ===== GESTUN ONLINE ===== */
+        .gestun-card {
+            background-color: var(--white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #e2e8f0;
+        }
+        .gestun-card h3 {
+            font-size: 1.125rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--primary-navy);
+            margin-bottom: var(--spacing-md);
+        }
+        .gestun-card p {
+            color: var(--medium-gray);
+            line-height: 1.6;
+            margin-bottom: var(--spacing-md);
+        }
+        .gestun-card ul {
+            padding-left: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+        .gestun-card li {
+            color: var(--medium-gray);
+            margin-bottom: var(--spacing-xs);
+        }
         .comparison-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
-            color: var(--text-muted);
+            margin: var(--spacing-md) 0;
+            overflow-x: auto;
+            display: block;
+            white-space: nowrap;
         }
-
-        .comparison-table th, .comparison-table td {
-            padding: 12px 15px;
+        @media (min-width: 768px) {
+            .comparison-table {
+                display: table;
+                white-space: normal;
+            }
+        }
+        .comparison-table th,
+        .comparison-table td {
+            padding: var(--spacing-sm);
             text-align: left;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid #e2e8f0;
         }
-
         .comparison-table th {
             background-color: var(--light-blue);
-            color: var(--primary-color);
-            font-weight: 600;
+            color: var(--primary-navy);
+            font-weight: var(--font-weight-semibold);
         }
-
         .comparison-table tr:hover {
             background-color: var(--light-gray);
         }
 
-        /* FAQ section - PERBAIKAN DROPDOWN */
+        /* ===== FAQ ===== */
         .faq-container {
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
         }
-
         .faq-item {
-            margin-bottom: 15px;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            transition: all 0.3s ease;
-            background: var(--white);
-            box-shadow: var(--shadow-light);
+            background-color: var(--white);
             border: 1px solid #e2e8f0;
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-sm);
+            overflow: hidden;
         }
-
         .faq-question {
-            padding: 20px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--primary-color);
+            padding: var(--spacing-md);
+            font-weight: var(--font-weight-semibold);
+            color: var(--primary-navy);
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: all 0.3s ease;
-            position: relative;
+            transition: background-color 0.2s ease;
         }
-
         .faq-question:hover {
-            background: var(--light-gray);
+            background-color: var(--light-gray);
         }
-
         .faq-answer {
-            padding: 0 20px;
+            padding: 0 var(--spacing-md);
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.5s ease, padding 0.5s ease;
-            color: var(--text-muted);
+            transition: all 0.3s ease;
+            color: var(--medium-gray);
             line-height: 1.6;
-            background: var(--light-gray);
         }
-
         .faq-item.active .faq-answer {
-            max-height: 500px;
-            padding: 0 20px 20px;
+            max-height: 200px;
+            padding: 0 var(--spacing-md) var(--spacing-md);
         }
-
-        .faq-item.active .faq-toggle i {
+        .faq-toggle {
+            color: var(--accent-teal);
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-toggle {
             transform: rotate(180deg);
         }
 
-        .faq-toggle {
-            transition: transform 0.3s ease;
-            color: var(--accent-color);
-            font-size: 1.2rem;
+        /* ===== CONTACT ===== */
+        .contact {
+            background-color: var(--light-gray);
         }
-
-        /* Contact section */
         .contact-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-            align-items: center;
-            text-align: center;
+            display: flex;
+            justify-content: center;
         }
-
+        @media (max-width: 640px) {
+            .contact-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
         .contact-info {
-            padding: 40px;
-            background: var(--white);
-            box-shadow: var(--shadow-light);
+            background-color: var(--white);
             border-radius: var(--radius-lg);
-            border: 1px solid #e2e8f0;
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-sm);
+            width: 100%;
+            max-width: 400px;
         }
-
-        .contact-info h3 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 25px;
-        }
-
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 15px;
-            padding: 20px 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            justify-content: center;
+            gap: var(--spacing-md);
+            padding: var(--spacing-md) 0;
+            border-bottom: 1px solid #e2e8f0;
         }
-
-        .contact-item:hover {
-            background: var(--light-gray);
-            margin: 0 -10px;
-            padding: 20px 10px;
-            border-radius: 12px;
-        }
-
+        .contact-item:last-child { border-bottom: none; }
         .contact-icon {
-            width: 45px;
-            height: 45px;
-            background: var(--accent-color);
-            border-radius: 10px;
+            width: 48px; height: 48px;
+            background-color: var(--accent-teal);
+            border-radius: var(--radius-md);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
-            color: white;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+            font-size: 1.125rem;
+            color: var(--white);
             flex-shrink: 0;
         }
-
-        .contact-text {
-            flex: 1;
-        }
-
         .contact-text h4 {
-            color: var(--primary-color);
-            font-weight: 600;
-            margin-bottom: 5px;
+            color: var(--primary-navy);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--spacing-xs);
         }
-
-        .contact-text p, .contact-text a {
-            color: var(--text-muted);
+        .contact-text p,
+        .contact-text a {
+            color: var(--medium-gray);
             text-decoration: none;
-            transition: color 0.3s ease;
         }
-
         .contact-text a:hover {
-            color: var(--accent-color);
+            color: var(--accent-teal);
         }
-
         .whatsapp-options {
             display: flex;
             flex-direction: column;
-            gap: 8px;
-            margin-top: 8px;
+            gap: var(--spacing-xs);
         }
-
         .whatsapp-option {
             display: flex;
             align-items: center;
-            gap: 8px;
-            padding: 6px 10px;
-            background: rgba(16, 185, 129, 0.15);
-            border-radius: 6px;
-            transition: all 0.3s ease;
+            gap: var(--spacing-xs);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            background-color: #dcfdf4;
+            border-radius: var(--radius-sm);
+            color: var(--success);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: background-color 0.2s ease;
         }
-
         .whatsapp-option:hover {
-            background: rgba(16, 185, 129, 0.25);
+            background-color: #bbf7d0;
         }
 
-        .whatsapp-option i {
-            color: var(--green-accent);
-        }
-
-        .big-whatsapp-btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 20px 40px;
-            font-size: 1.3rem;
-        }
-
-        /* Footer */
+        /* ===== FOOTER ===== */
         footer {
-            padding: 60px 0 30px;
-            background: var(--primary-color);
-            backdrop-filter: blur(20px);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: var(--primary-navy);
             color: var(--white);
+            padding: var(--spacing-2xl) 0 var(--spacing-lg);
         }
-
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 40px;
-            margin-bottom: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
         }
-
         .footer-section h3 {
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--spacing-md);
             color: var(--white);
-            font-weight: 700;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
         }
-
         .footer-section p, .footer-section a {
             color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             line-height: 1.8;
-            transition: color 0.3s ease;
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: var(--spacing-xs);
+            transition: color 0.2s ease;
         }
-
         .footer-section a:hover {
-            color: var(--accent-light);
+            color: var(--white);
         }
-
         .social-links {
             display: flex;
-            gap: 12px;
-            margin-top: 15px;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
         }
-
         .social-link {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
+            width: 40px; height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
             display: flex;
             align-items: center;
             justify-content: center;
             color: rgba(255, 255, 255, 0.8);
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
+            transition: all 0.2s ease;
         }
-
         .social-link:hover {
-            background: var(--accent-color);
-            color: white;
-            transform: translateY(-3px);
+            background-color: var(--accent-teal);
+            color: var(--white);
+            transform: translateY(-2px);
         }
-
         .footer-bottom {
-            padding-top: 30px;
+            padding-top: var(--spacing-lg);
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
             color: rgba(255, 255, 255, 0.8);
-            font-size: 0.9rem;
         }
 
-        /* Mobile Menu - PERBAIKAN YANG LEBIH BAIK */
-        .mobile-menu-btn {
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-            z-index: 1001;
-            position: relative;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 5px;
-            padding: 5px;
-        }
+        /* ===== UTILITIES ===== */
+        .text-center { text-align: center; }
+        .mb-4 { margin-bottom: var(--spacing-md); }
+        .mb-8 { margin-bottom: var(--spacing-xl); }
+        .mt-4 { margin-top: var(--spacing-md); }
+        .mt-8 { margin-top: var(--spacing-xl); }
 
-        .mobile-menu-btn span {
-            width: 25px;
-            height: 3px;
-            background: var(--primary-color);
-            border-radius: 3px;
-            transition: all 0.3s ease;
-            transform-origin: center;
-            display: block;
-            margin: 2px 0;
-        }
-
-        .mobile-menu-btn.active span:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
-        }
-
-        .mobile-menu-btn.active span:nth-child(2) {
+        /* ===== ANIMATIONS ===== */
+        .fade-in-up {
             opacity: 0;
-            transform: scale(0);
-        }
-
-        .mobile-menu-btn.active span:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
-        }
-
-        /* Animations */
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(30px);
             transition: all 0.6s ease;
         }
-
-        .animate-on-scroll.animated {
+        .fade-in-up.animated {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* Loading Animation */
+        /* ===== LOADING SPINNER ===== */
         .loader {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--white);
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: var(--white);
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 10000;
             transition: opacity 0.5s ease;
         }
-
         .loader.hidden {
             opacity: 0;
             pointer-events: none;
         }
-
         .spinner {
-            width: 50px;
-            height: 50px;
-            border: 3px solid rgba(0, 0, 0, 0.1);
-            border-left: 3px solid var(--accent-color);
+            width: 50px; height: 50px;
+            border: 3px solid var(--light-gray);
+            border-left: 3px solid var(--accent-teal);
             border-radius: 50%;
             animation: spin 1s linear infinite;
         }
-
-        /* Hover Effects */
-        .service-card, .step-card, .swiper-slide {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .service-card:hover, .step-card:hover, .swiper-slide:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* ===== ANIMATIONS ===== */
-        @keyframes sparkle {
-            0% { background-position: 0% 0%, 0% 0%, 0% 0%; }
-            100% { background-position: 100px 100px, -100px 200px, 200px -100px; }
-        }
-
-        @keyframes bounce {
-            from { transform: translateY(0) rotate(0deg); }
-            to { transform: translateY(-5px) rotate(5deg); }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
 
+        /* ===== DECORATIVE BACKGROUND ===== */
+        .sparkle {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px) 0 0/10px 10px;
+            pointer-events: none;
+        }
+        .floating-element {
+            position: absolute;
+            background-color: rgba(0, 168, 168, 0.3);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
         @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(20px, 40px) rotate(5deg); }
-            50% { transform: translate(-30px, 20px) rotate(-5deg); }
-            75% { transform: translate(10px, -30px) rotate(3deg); }
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(20deg); }
         }
 
-        /* ===== RESPONSIVE DESIGN ===== */
-        @media (max-width: 1024px) {
-            .services-grid {
-                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-                gap: 25px;
+        /* ===== RESPONSIVE ADJUSTMENTS ===== */
+        @media (max-width: 640px) {
+            :root {
+                --spacing-sm: 0.875rem;
+                --spacing-md: 1.25rem;
+                --spacing-lg: 1.75rem;
+                --spacing-xl: 2.5rem;
+                --spacing-2xl: 3rem;
             }
-
-            .gestun-online-content {
-                grid-template-columns: 1fr;
-                gap: 25px;
+            .hero {
+                padding: calc(70px + var(--spacing-lg)) 0 var(--spacing-lg);
             }
-            
-            .nav-links {
-                gap: 20px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: flex;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 70%;
-                height: 100vh;
-                background: rgba(255, 255, 255, 0.95);
-                backdrop-filter: blur(20px);
-                flex-direction: column;
-                padding: 80px 30px 30px;
-                border-radius: 0;
-                gap: 20px;
-                box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
-                z-index: 999;
-                transition: right 0.4s ease;
-                overflow-y: auto;
-            }
-
-            .nav-links.active {
-                right: 0;
-            }
-
-            .nav-links li {
-                width: 100%;
-            }
-
-            .nav-links a {
-                display: block;
-                padding: 15px;
-                font-size: 1.1rem;
-                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-            }
-
-            .nav-links a::before {
-                display: none;
-            }
-
-            .hero-content {
-                padding: 40px 20px;
-            }
-
-            .hero-cta {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .contact-info {
-                padding: 30px 20px;
-            }
-
-            .swiper-button-next, .swiper-button-prev {
-                display: none;
-            }
-            
-            nav {
-                padding: 10px 20px;
-            }
-            
             section {
-                padding: 60px 0;
+                padding: var(--spacing-xl) 0;
             }
-
-            .comparison-table {
-                display: block;
-                overflow-x: auto;
+            .card {
+                padding: var(--spacing-md);
             }
-
-            /* Video responsive improvements */
-            .video-wrapper {
-                margin-bottom: 30px;
-                max-width: 100%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-            
-            .btn-primary, .btn-secondary {
-                padding: 12px 25px;
-                font-size: 0.9rem;
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .btn-whatsapp {
-                padding: 15px 30px;
-                font-size: 1.1rem;
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .section-subtitle {
-                font-size: 1rem;
-            }
-
-            /* Video improvements for mobile */
-            .video-demo-section {
-                margin: 30px 0;
-            }
-            
-            .video-caption {
-                font-size: 0.9rem;
-                margin-top: 15px;
-            }
-
-            .big-whatsapp-btn {
-                padding: 15px 25px;
-                font-size: 1.1rem;
-                width: 100%;
-            }
-
-            .service-card, .step-card, .gestun-card {
-                padding: 25px 20px;
-            }
-
-            .service-icon {
-                width: 60px;
-                height: 60px;
-                font-size: 1.5rem;
-            }
-
             .contact-item {
                 flex-direction: column;
                 text-align: center;
-                gap: 10px;
-            }
-
-            .contact-icon {
-                width: 40px;
-                height: 40px;
-                font-size: 1rem;
-            }
-
-            .nav-links {
-                width: 80%;
+                gap: var(--spacing-sm);
             }
         }
     </style>
 </head>
 <body>
+    <!-- Sparkle Background -->
+    <div class="sparkle"></div>
+    <!-- Floating Elements -->
+    <div class="floating-element" style="width: 300px; height: 300px; top: 10%; left: 5%; animation-delay: 0s;"></div>
+    <div class="floating-element" style="width: 200px; height: 200px; top: 70%; right: 5%; animation-delay: 2s;"></div>
+    <div class="floating-element" style="width: 250px; height: 250px; bottom: 10%; left: 20%; animation-delay: 4s;"></div>
+
     <!-- Loading Screen -->
     <div class="loader" id="loader">
         <div class="spinner"></div>
@@ -1228,48 +870,50 @@
 
     <!-- Header -->
     <header id="header">
-        <div class="container">
-            <nav>
-                <div class="logo">Gestun by Riki</div>
-                <ul class="nav-links">
-                    <li><a href="#home">Beranda</a></li>
-                    <li><a href="#testimonials">Testimoni</a></li>
-                    <li><a href="#video-demo">Demo</a></li>
-                    <li><a href="#services">Layanan</a></li>
-                    <li><a href="#how-it-works">Cara Kerja</a></li>
-                    <li><a href="#gestun-online">Gestun Online</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#contact">Kontak</a></li>
-                </ul>
-                <div class="mobile-menu-btn">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
-        </div>
+        <nav class="ultra-glass accent-border">
+            <div class="logo">Gestun by Riki</div>
+            <ul class="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#testimonials">Testimoni</a></li>
+                <li><a href="#video-demo">Demo</a></li>
+                <li><a href="#services">Layanan</a></li>
+                <li><a href="#how-it-works">Cara Kerja</a></li>
+                <li><a href="#gestun-online">Gestun Online</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+            <!-- Tombol burger menu -->
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
     </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
-            <div class="hero-content">
-                <div class="badge mb-4">
-                    <i class="fas fa-lightning-bolt"></i> Solusi Tercepat & Terpercaya
+            <div class="hero-content ultra-glass accent-border">
+                <div class="hero-badge">
+                    <i class="fas fa-lightning-bolt"></i> Solusi Tercepat &amp; Terpercaya
                 </div>
                 <h1>Gestun by Riki</h1>
                 <p class="hero-subtitle">
-                    Layanan penarikan tunai kartu kredit tercepat se-Indonesia dengan proses instan 5 menit. 
-                    Solusi terpercaya untuk kebutuhan dana darurat Anda.
+                    Layanan Gestun by Riki tercepat se-Indonesia! Proses instan 5 menit, tanpa ribet, dan dijamin aman. Solusi finansial tepat ketika Anda membutuhkan dana cepat.
                 </p>
                 <div class="hero-cta">
-                    <a href="https://wa.me/6285285969934" class="btn btn-whatsapp" target="_blank">
-                        <i class="fab fa-whatsapp"></i>
-                        Hubungi Sekarang
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-bolt"></i>
+                        Ajukan Sekarang
                     </a>
-                    <a href="#services" class="btn btn-outline">
+                    <a href="https://wa.me/+6285285969934" class="btn btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        Chat WhatsApp
+                    </a>
+                    <a href="#services" class="btn btn-secondary">
                         <i class="fas fa-info-circle"></i>
-                        Pelajari Lebih Lanjut
+                        Info Layanan
                     </a>
                 </div>
             </div>
@@ -1279,46 +923,17 @@
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
         <div class="container">
-            <div class="section-header fade-in-up">
-                <div class="badge">Testimoni</div>
-                <h2 class="section-title">Apa Kata Pelanggan Kami</h2>
+            <div class="section-header animate-on-scroll">
+                <div class="section-badge">Testimoni Pelanggan</div>
+                <h2 class="section-title">Apa Kata Mereka</h2>
                 <p class="section-subtitle">
-                    Bukti nyata kepuasan pelanggan yang telah menggunakan layanan Gestun by Riki.
+                    Bukti nyata kepuasan pelanggan yang sudah menggunakan layanan Gestun by Riki.
                 </p>
             </div>
-
-            <div class="swiper testimonialSwiper fade-in-up">
+            <div class="swiper testimonial-slider">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide testimonial-slide">
-                        <img src="images/Testimoni1.jpg" alt="Testimoni 1" class="testimonial-img">
-                        <div class="testimonial-caption">
-                            "Prosesnya sangat cepat, dalam 5 jam dana sudah masuk. Terima kasih Gestun by Riki!"
-                        </div>
-                    </div>
-                    <div class="swiper-slide testimonial-slide">
-                        <img src="images/Testimoni2.jpg" alt="Testimoni 2" class="testimonial-img">
-                        <div class="testimonial-caption">
-                            "Pelayanan ramah dan profesional. Recommended banget untuk yang butuh dana cepat!"
-                        </div>
-                    </div>
-                    <div class="swiper-slide testimonial-slide">
-                        <img src="images/Testimoni3.jpg" alt="Testimoni 3" class="testimonial-img">
-                        <div class="testimonial-caption">
-                            "Bunga kompetitif dan tidak ada biaya tambahan. Puas dengan layanannya!"
-                        </div>
-                    </div>
-                    <div class="swiper-slide testimonial-slide">
-                        <img src="images/Testimoni4.jpg" alt="Testimoni 3" class="testimonial-img">
-                        <div class="testimonial-caption">
-                            "Data diri dan pelayanan aman juga terpercaya!"
-                        </div>
-                    </div>
-                    <div class="swiper-slide testimonial-slide">
-                        <img src="images/Testimoni5.jpg" alt="Testimoni 3" class="testimonial-img">
-                        <div class="testimonial-caption">
-                            "Tunggu apalagi buruan gestun di GestunByRIki!"
-                        </div>
-                    </div>
+                    <!-- Testimonials slides -->
+                    <!-- ... -->
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
@@ -1326,68 +941,84 @@
     </section>
 
     <!-- Video Demo Section -->
-    <section id="video-demo" class="video-demo">
+    <section id="video-demo" class="video-demo-section">
         <div class="container">
-            <div class="section-header fade-in-up">
-                <div class="badge">Demo</div>
-                <h2 class="section-title">Demo Proses Gestun</h2>
+            <div class="section-header animate-on-scroll">
+                <div class="section-badge">Demo</div>
+                <h2 class="section-title">Lihat Proses Gestun by Riki</h2>
                 <p class="section-subtitle">
-                    Lihat bagaimana proses gestun berlangsung dengan cepat dan mudah.
+                    Tonton demo singkat bagaimana mudah dan cepatnya proses gestun online bersama kami.
                 </p>
             </div>
-
-            <div class="fade-in-up">
-                <video class="portrait-video" controls poster="images/Gambar.jpeg">
-                    <source src="images/Output.mp4" type="video/mp4">
+            <div class="video-wrapper ultra-glass animate-on-scroll">
+                <video controls poster="images/Gambar.jpeg" preload="metadata">
+                    <source src="images/baru.mp4" type="video/mp4">
                     Browser Anda tidak mendukung pemutaran video.
                 </video>
-                <p class="video-caption">Demo proses penarikan tunai dengan kartu kredit melalui mesin EDC</p>
             </div>
+            <p class="video-caption animate-on-scroll">
+                Proses gestun online hanya membutuhkan waktu 5-10 menit saja.
+            </p>
         </div>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <div class="section-header fade-in-up">
-                <div class="badge">Layanan</div>
-                <h2 class="section-title">Layanan Unggulan Kami</h2>
+            <div class="section-header animate-on-scroll">
+                <div class="section-badge">Layanan Unggulan</div>
+                <h2 class="section-title">Kenapa Memilih Gestun by Riki?</h2>
                 <p class="section-subtitle">
-                    Berbagai layanan gestun yang dapat disesuaikan dengan kebutuhan Anda.
+                    Kami memberikan solusi terbaik untuk kebutuhan dana cepat Anda dengan proses mudah, aman, dan terpercaya.
                 </p>
             </div>
-
-            <div class="grid grid-cols-3">
-                <div class="card service-card fade-in-up">
-                    <div class="service-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3>Gestun Instan</h3>
-                    <p>Proses penarikan tunai super cepat hanya dalam 5 menit. Cocok untuk kebutuhan darurat.</p>
-                    <a href="https://wa.me/6285285969934" class="service-link">
-                        Pesan Sekarang <i class="fas fa-arrow-right"></i>
+            <div class="services-grid">
+                <div class="service-card ultra-glass animate-on-scroll">
+                    <div class="service-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Proses Kilat 5 Menit</h3>
+                    <p>Dana cair dalam hitungan menit! Hanya dengan kartu kredit dan e-KTP, proses Gestun by Riki selesai seketika.</p>
+                    <a href="#contact" class="service-link">
+                        Ajukan Sekarang <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
-
-                <div class="card service-card fade-in-up">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Gestun Paylater</h3>
-                    <p>Layanan penarikan tunai dari berbagai aplikasi paylater dengan proses mudah.</p>
-                    <a href="https://wa.me/6285285969934" class="service-link">
-                        Pesan Sekarang <i class="fas fa-arrow-right"></i>
+                <div class="service-card ultra-glass animate-on-scroll">
+                    <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Keamanan Terjamin</h3>
+                    <p>Transaksi dijamin aman dan terpercaya. Data pribadi Anda terlindungi dengan sistem enkripsi tingkat tinggi.</p>
+                    <a href="#contact" class="service-link">
+                        Ajukan Sekarang <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
-
-                <div class="card service-card fade-in-up">
-                    <div class="service-icon">
-                        <i class="fas fa-credit-card"></i>
-                    </div>
-                    <h3>Gestun CC Online</h3>
-                    <p>Layanan gestun untuk kartu kredit dengan sistem online yang praktis dan aman.</p>
-                    <a href="https://wa.me/6285285969934" class="service-link">
-                        Pesan Sekarang <i class="fas fa-arrow-right"></i>
+                <div class="service-card ultra-glass animate-on-scroll">
+                    <div class="service-icon"><i class="fas fa-percentage"></i></div>
+                    <h3>Bunga Kompetitif</h3>
+                    <p>Bunga terjangkau mulai dari 2% per bulan. Tidak ada biaya tersembunyi, semua transparan dan jelas.</p>
+                    <a href="#contact" class="service-link">
+                        Ajukan Sekarang <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="service-card ultra-glass animate-on-scroll">
+                    <div class="service-icon"><i class="fas fa-money-bill-wave"></i></div>
+                    <h3>Limit Fleksibel</h3>
+                    <p>Dana tunai mulai dari Rp 1 juta hingga Rp 100 juta dapat dicairkan sesuai kebutuhan dan limit kartu kredit Anda.</p>
+                    <a href="#contact" class="service-link">
+                        Ajukan Sekarang <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="service-card ultra-glass animate-on-scroll">
+                    <div class="service-icon"><i class="fas fa-clock"></i></div>
+                    <h3>Layanan 24/7</h3>
+                    <p>Melayani kebutuhan Anda kapan saja, termasuk weekend dan hari libur. Tim kami siap membantu 24 jam.</p>
+                    <a href="#contact" class="service-link">
+                        Ajukan Sekarang <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="service-card ultra-glass animate-on-scroll">
+                    <div class="service-icon"><i class="fas fa-truck"></i></div>
+                    <h3>Jemput Antar Gratis</h3>
+                    <p>Khusus area Jakarta, kami memberikan layanan jemput dan antar kartu secara gratis tanpa biaya tambahan.</p>
+                    <a href="#contact" class="service-link">
+                        Ajukan Sekarang <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
@@ -1397,40 +1028,42 @@
     <!-- How It Works Section -->
     <section id="how-it-works" class="how-it-works">
         <div class="container">
-            <div class="section-header fade-in-up">
-                <div class="badge">Cara Kerja</div>
-                <h2 class="section-title">Cara Menggunakan Layanan</h2>
+            <div class="section-header animate-on-scroll">
+                <div class="section-badge">Proses</div>
+                <h2 class="section-title">Cara Mudah Mengajukan Gestun by Riki</h2>
                 <p class="section-subtitle">
-                    Proses mudah dan cepat untuk mendapatkan dana tunai dari kartu kredit Anda.
+                    Hanya 4 langkah mudah untuk mendapatkan dana tunai dari kartu kredit Anda. Proses cepat dan tanpa ribet.
                 </p>
             </div>
-
-            <div class="grid grid-cols-3">
-                <div class="card step-card fade-in-up">
+            <!-- Video Demonstrasi -->
+            <video class="portrait-video" controls playsinline>
+                <source src="images/Output.mp4" type="video/mp4">
+                Browser Anda tidak mendukung pemutaran video.
+            </video>
+            <div class="steps-container">
+                <div class="step-card ultra-glass animate-on-scroll">
                     <div class="step-number">1</div>
-                    <div class="step-icon">
-                        <i class="fas fa-comment-alt"></i>
-                    </div>
+                    <div class="step-icon"><i class="fas fa-phone-alt"></i></div>
                     <h3>Hubungi Kami</h3>
-                    <p>Hubungi customer service kami via WhatsApp untuk konfirmasi ketersediaan layanan.</p>
+                    <p>Hubungi customer service kami via WhatsApp, telepon, atau isi form kontak.</p>
                 </div>
-
-                <div class="card step-card fade-in-up">
+                <div class="step-card ultra-glass animate-on-scroll">
                     <div class="step-number">2</div>
-                    <div class="step-icon">
-                        <i class="fas fa-credit-card"></i>
-                    </div>
-                    <h3>Proses Penarikan</h3>
-                    <p>Lakukan penarikan dana tunai melalui mesin EDC dengan panduan dari tim kami.</p>
+                    <div class="step-icon"><i class="fas fa-clipboard-list"></i></div>
+                    <h3>Konfirmasi Data</h3>
+                    <p>Berikan informasi kartu kredit dan data diri Anda. Proses verifikasi hanya beberapa menit.</p>
                 </div>
-
-                <div class="card step-card fade-in-up">
+                <div class="step-card ultra-glass animate-on-scroll">
                     <div class="step-number">3</div>
-                    <div class="step-icon">
-                        <i class="fas fa-money-bill-wave"></i>
-                    </div>
+                    <div class="step-icon"><i class="fas fa-credit-card"></i></div>
+                    <h3>Proses Gestun by Riki</h3>
+                    <p>Tim kami akan melakukan proses gestun. Untuk area Jakarta, kami bisa jemput kartu Anda.</p>
+                </div>
+                <div class="step-card ultra-glass animate-on-scroll">
+                    <div class="step-number">4</div>
+                    <div class="step-icon"><i class="fas fa-money-check"></i></div>
                     <h3>Dana Cair</h3>
-                    <p>Dana akan langsung ditransfer ke rekening Anda dalam waktu 5-10 menit.</p>
+                    <p>Dana langsung ditransfer ke rekening Anda. Proses hanya 5-10 menit setelah persetujuan.</p>
                 </div>
             </div>
         </div>
@@ -1439,65 +1072,143 @@
     <!-- Gestun Online Section -->
     <section id="gestun-online" class="gestun-online">
         <div class="container">
-            <div class="section-header fade-in-up">
-                <div class="badge">Gestun Online</div>
-                <h2 class="section-title">Layanan Gestun Online</h2>
+            <div class="section-header animate-on-scroll">
+                <div class="section-badge">Layanan Modern</div>
+                <h2 class="section-title">Gestun Online by Riki</h2>
                 <p class="section-subtitle">
-                    Nikmati kemudahan layanan gestun secara online tanpa harus bertatap muka.
+                    Solusi Modern Cairkan Limit Paylater dan CC Anda secara Online
                 </p>
             </div>
 
-            <div class="grid grid-cols-2">
-                <div class="card gestun-card fade-in-up">
-                    <h3>Keunggulan Gestun Online</h3>
+            <div class="ultra-glass animate-on-scroll" style="padding: 40px; margin-bottom: 30px;">
+                <h3 style="margin-bottom: 20px; color: var(--primary-navy);">Apa Itu Gestun Online by Riki?</h3>
+                <p style="color: var(--medium-gray); line-height: 1.6; margin-bottom: 20px;">
+                    <strong>Gestun by Riki</strong> adalah layanan pencairan limit digital menjadi uang tunai yang dilakukan secara online. Berbeda dengan pinjaman konvensional, gestun memanfaatkan limit yang sudah Anda miliki di platform tertentu, sehingga tidak menambah beban utang baru.
+                </p>
+            </div>
+
+            <div class="gestun-online-content">
+                <div class="ultra-glass gestun-card animate-on-scroll">
+                    <h3>Keunggulan Gestun Paylater</h3>
+                    <p>Layanan gestun paylater khusus membantu Anda mencairkan limit dari berbagai aplikasi paylater populer seperti:</p>
                     <ul>
-                        <li>Proses tanpa tatap muka</li>
-                        <li>Bisa dilakukan dari mana saja</li>
-                        <li>Waktu proses lebih fleksibel</li>
-                        <li>Dukungan customer service 24/7</li>
-                        <li>Transaksi aman dan terjamin</li>
+                        <li>GoPayLater (Gopay)</li>
+                        <li>IndoDana</li>
+                        <li>ShopeePayLater</li>
+                        <li>OVO PayLater</li>
+                        <li>Kredivo</li>
+                        <li>Dan lain-lain</li>
                     </ul>
-                    <a href="https://wa.me/6285285969934" class="btn btn-primary">
-                        <i class="fab fa-whatsapp"></i>
-                        Konsultasi Gratis
+                    <p>Keuntungan menggunakan gestun paylater:</p>
+                    <ul>
+                        <li>Proses cepat (10-30 menit)</li>
+                        <li>Tidak perlu verifikasi berbelit</li>
+                        <li>Bisa cairkan limit kecil maupun besar</li>
+                        <li>Dana langsung masuk ke rekening</li>
+                    </ul>
+                </div>
+                <div class="ultra-glass gestun-card animate-on-scroll">
+                    <h3>Keunggulan Gestun CC Online</h3>
+                    <p>Selain paylater, layanan gestun cc online juga semakin populer. Ini adalah alternatif pengelolaan dana digital yang praktis dan efisien.</p>
+                    <p>Beberapa kelebihan gestun cc online:</p>
+                    <ul>
+                        <li>Limit lebih besar (hingga puluhan juta)</li>
+                        <li>Proses validasi sederhana</li>
+                        <li>Support berbagai bank dan fintech</li>
+                        <li>Tidak perlu login pihak ketiga</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="ultra-glass animate-on-scroll" style="padding: 40px; margin-top: 30px;">
+                <h3 style="margin-bottom: 20px; color: var(--primary-navy);">Perbedaan Gestun Online dengan Pinjaman</h3>
+                <p style="color: var(--medium-gray); line-height: 1.6; margin-bottom: 20px;">
+                    Banyak yang bertanya, apa bedanya gestun online dengan pinjaman biasa? Berikut perbedaannya:
+                </p>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Aspek</th>
+                            <th>Gestun Online</th>
+                            <th>Pinjaman</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sumber Dana</td>
+                            <td>Limit yang sudah ada</td>
+                            <td>Dana baru</td>
+                        </tr>
+                        <tr>
+                            <td>Proses</td>
+                            <td>Cepat (menit-jam)</td>
+                            <td>Lama (hari-minggu)</td>
+                        </tr>
+                        <tr>
+                            <td>Bunga</td>
+                            <td>Biaya sekali</td>
+                            <td>Bunga berkelanjutan</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="ultra-glass animate-on-scroll" style="padding: 40px; margin-top: 30px;">
+                <h3 style="margin-bottom: 20px; color: var(--primary-navy);">Tips Memilih Layanan Gestun Terpercaya</h3>
+                <p style="color: var(--medium-gray); line-height: 1.6; margin-bottom: 20px;">
+                    Untuk menghindari penipuan, berikut ciri-ciri gestun online yang terpercaya:
+                </p>
+                <ul style="color: var(--medium-gray); padding-left: 20px;">
+                    <li>Transparan tentang biaya sejak awal</li>
+                    <li>Tidak meminta informasi login/password</li>
+                    <li>Memiliki testimoni asli dari pelanggan</li>
+                    <li>Responsif dalam pelayanan</li>
+                    <li>Memberikan garansi proses</li>
+                </ul>
+            </div>
+
+            <div class="section-header animate-on-scroll" style="margin-top: 60px;">
+                <h3 class="section-title">Layanan Gestun Online Kami</h3>
+                <p class="section-subtitle">
+                    Kami menyediakan layanan gestun cc dan gestun paylater terbaik.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card ultra-glass animate-on-scroll">
+                    <div class="service-icon"><i class="fas fa-wallet"></i></div>
+                    <h3>Gestun Paylater</h3>
+                    <p>Kami membantu mencairkan limit paylater dari berbagai platform populer dengan proses cepat dan aman. Dana langsung masuk ke rekening Anda tanpa ribet.</p>
+                    <p><strong>Platform yang Didukung:</strong></p>
+                    <ul style="color: var(--medium-gray); padding-left: 20px; margin-bottom: 15px;">
+                        <li>GoPayLater</li>
+                        <li>IndoDana</li>
+                        <li>ShopeePayLater</li>
+                        <li>OVO PayLater</li>
+                        <li>Blibli paylater</li>
+                        <li>LinkAja PayLater</li>
+                        <li>Akulaku</li>
+                        <li>Kredivo</li>
+                    </ul>
+                    <p><strong>Proses: 10-30 menit</strong></p>
+                    <a href="#contact" class="service-link">
+                        Konsultasi <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
-
-                <div class="card gestun-card fade-in-up">
-                    <h3>Perbandingan Layanan</h3>
-                    <div class="comparison-table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Layanan</th>
-                                    <th>Gestun by Riki</th>
-                                    <th>Layanan Lain</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Waktu Proses</td>
-                                    <td>5-10 menit</td>
-                                    <td>1-2 jam</td>
-                                </tr>
-                                <tr>
-                                    <td>Bunga</td>
-                                    <td>Kompetitif</td>
-                                    <td>Tinggi</td>
-                                </tr>
-                                <tr>
-                                    <td>Biaya Tambahan</td>
-                                    <td>Tidak ada</td>
-                                    <td>Ada</td>
-                                </tr>
-                                <tr>
-                                    <td>Layanan 24/7</td>
-                                    <td><i class="fas fa-check"></i></td>
-                                    <td><i class="fas fa-times"></i></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="service-card ultra-glass animate-on-scroll">
+                    <div class="service-icon"><i class="fas fa-credit-card"></i></div>
+                    <h3>Gestun CC</h3>
+                    <p>Gestun CC Online - Pengelolaan dana digital dengan mudah dan cepat. Proses validasi sederhana tanpa perlu login pihak ketiga. Support berbagai platform digital.</p>
+                    <p><strong>Keunggulan:</strong></p>
+                    <ul style="color: var(--medium-gray); padding-left: 20px; margin-bottom: 15px;">
+                        <li>Limit besar hingga puluhan juta</li>
+                        <li>Tanpa verifikasi rumit</li>
+                        <li>Cukup satu kali validasi</li>
+                        <li>Limit hingga Rp50 juta</li>
+                    </ul>
+                    <a href="#contact" class="service-link">
+                        Konsultasi <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -1506,16 +1217,15 @@
     <!-- FAQ Section -->
     <section id="faq" class="faq">
         <div class="container">
-            <div class="section-header fade-in-up">
-                <div class="badge">Pertanyaan</div>
+            <div class="section-header animate-on-scroll">
+                <div class="section-badge">Pertanyaan</div>
                 <h2 class="section-title">Pertanyaan Umum</h2>
                 <p class="section-subtitle">
                     Temukan jawaban atas pertanyaan yang sering diajukan tentang layanan Gestun by Riki.
                 </p>
             </div>
-
             <div class="faq-container">
-                <div class="faq-item fade-in-up">
+                <div class="faq-item ultra-glass animate-on-scroll">
                     <div class="faq-question">
                         Apa itu Gestun by Riki?
                         <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
@@ -1524,8 +1234,7 @@
                         Gestun by Riki adalah layanan penarikan dana tunai dari kartu kredit melalui mesin EDC. Dana yang ditarik akan dikenakan bunga sesuai dengan ketentuan bank penerbit kartu kredit.
                     </div>
                 </div>
-
-                <div class="faq-item fade-in-up">
+                <div class="faq-item ultra-glass animate-on-scroll">
                     <div class="faq-question">
                         Berapa lama proses pencairan dananya?
                         <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
@@ -1534,8 +1243,7 @@
                         Proses pencairan dana sangat cepat, hanya memakan waktu 5-10 menit setelah persetujuan. Kami menjamin dana akan langsung ditransfer ke rekening Anda.
                     </div>
                 </div>
-
-                <div class="faq-item fade-in-up">
+                <div class="faq-item ultra-glass animate-on-scroll">
                     <div class="faq-question">
                         Apakah ada biaya tambahan selain bunga?
                         <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
@@ -1544,10 +1252,9 @@
                         Tidak ada biaya tambahan apapun. Semua biaya sudah termasuk dalam bunga yang kompetitif. Kami transparan dalam hal biaya.
                     </div>
                 </div>
-
-                <div class="faq-item fade-in-up">
+                <div class="faq-item ultra-glass animate-on-scroll">
                     <div class="faq-question">
-                        Apakan data saya aman?
+                        Apahan data saya aman?
                         <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
@@ -1561,22 +1268,18 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <div class="section-header fade-in-up">
-                <div class="badge">Hubungi Kami</div>
+            <div class="section-header animate-on-scroll">
+                <div class="section-badge">Hubungi Kami</div>
                 <h2 class="section-title">Kami Siap Membantu Anda</h2>
                 <p class="section-subtitle">
                     Tim customer service kami siap melayani Anda 24/7. Jangan ragu untuk menghubungi kami kapan saja.
                 </p>
             </div>
-            
-            <div class="grid grid-cols-1" style="max-width: 600px; margin: 0 auto;">
-                <div class="card fade-in-up">
-                    <h3 class="text-center mb-4">Informasi Kontak</h3>
-                    
+            <div class="contact-container">
+                <div class="contact-info ultra-glass animate-on-scroll">
+                    <h3>Informasi Kontak</h3>
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-whatsapp"></i>
-                        </div>
+                        <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
                         <div class="contact-text">
                             <h4>WhatsApp</h4>
                             <div class="whatsapp-options">
@@ -1587,33 +1290,24 @@
                             </div>
                         </div>
                     </div>
-                    
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
                         <div class="contact-text">
                             <h4>Telepon</h4>
-                            <a href="tel:+6285285969934">+62 852-8596-9934</a>
+                            <a href="tel:+6285285969934">(021) 85285969934</a>
                         </div>
                     </div>
-                    
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
+                        <div class="contact-icon"><i class="fas fa-clock"></i></div>
                         <div class="contact-text">
                             <h4>Jam Operasional</h4>
                             <p>24 Jam / 7 Hari</p>
                         </div>
                     </div>
-
-                    <div class="text-center mt-8">
-                        <a href="https://wa.me/6285285969934" class="btn btn-whatsapp" target="_blank" style="width: 100%; max-width: 300px;">
-                            <i class="fab fa-whatsapp"></i>
-                            Hubungi via WhatsApp
-                        </a>
-                    </div>
+                    <a href="https://wa.me/6285285969934" class="btn btn-whatsapp big-whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        Hubungi via WhatsApp
+                    </a>
                 </div>
             </div>
         </div>
@@ -1623,143 +1317,162 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section fade-in-up">
+                <div class="footer-section animate-on-scroll">
                     <h3>Gestun by Riki</h3>
                     <p>Layanan Gestun by Riki tercepat se-Indonesia dengan proses instan 5 menit. Solusi terpercaya untuk kebutuhan dana darurat Anda.</p>
                     <div class="social-links">
                         <a href="https://facebook.com/GestunByRiki" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://instagram.com/GestunByRIki" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://instagram.com/GestunByRiki" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="https://wa.me/6285285969934" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
-                
-                <div class="footer-section fade-in-up">
+                <div class="footer-section animate-on-scroll">
                     <h3>Layanan</h3>
-                    <a href="#services">Gestun by Riki Instan</a>
-                    <a href="#gestun-online">Gestun Paylater</a>
-                    <a href="#gestun-online">Gestun CC Online</a>
-                    <a href="#services">Layanan 24 Jam</a>
+                    <p><a href="#services">Gestun by Riki Instan</a></p>
+                    <p><a href="#gestun-online">Gestun Paylater</a></p>
+                    <p><a href="#gestun-online">Gestun CC Online</a></p>
+                    <p><a href="#services">Layanan 24 Jam</a></p>
                 </div>
-                
-                <div class="footer-section fade-in-up">
+                <div class="footer-section animate-on-scroll">
                     <h3>Informasi</h3>
-                    <a href="#how-it-works">Cara Kerja</a>
-                    <a href="#gestun-online">Gestun Online</a>
-                    <a href="#testimonials">Testimoni</a>
-                    <a href="#faq">FAQ</a>
+                    <p><a href="#how-it-works">Cara Kerja</a></p>
+                    <p><a href="#gestun-online">Gestun Online</a></p>
+                    <p><a href="#testimonials">Testimoni</a></p>
+                    <p><a href="#faq">FAQ</a></p>
                 </div>
-                
-                <div class="footer-section fade-in-up">
+                <div class="footer-section animate-on-scroll">
                     <h3>Kontak</h3>
                     <p><i class="fab fa-whatsapp"></i> WhatsApp: +62 852-8596-9934</p>
-                    <p><i class="fas fa-phone"></i> Telepon: +62 852-8596-9934</p>
+                    <p><i class="fas fa-phone"></i> Telepon: (021) 556-7890</p>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p>&copy; 2025 Gestun by Riki. All rights reserved.</p>
+                <p>&copy; 2025 Gestun by Riki. All rights reserved. | Solusi Cepat &amp; Terpercaya</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script>
-        // Wait for DOM to load
-        document.addEventListener('DOMContentLoaded', function() {
-            // Hide loader after page loads
-            setTimeout(function() {
+        /* JavaScript seperti semula... */
+        window.addEventListener('load', function() {
+            setTimeout(() => {
                 document.getElementById('loader').classList.add('hidden');
             }, 1000);
-            
-            // Initialize Swiper for testimonials
-            const testimonialSwiper = new Swiper('.testimonialSwiper', {
-                loop: true,
-                autoplay: {
-                    delay: 5000,
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-            });
-            
-            // Mobile menu toggle
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const navLinks = document.querySelector('.nav-links');
-            
-            mobileMenuBtn.addEventListener('click', function() {
-                mobileMenuBtn.classList.toggle('active');
-                navLinks.classList.toggle('active');
-            });
-            
-            // Close mobile menu when clicking on a link
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', function() {
-                    mobileMenuBtn.classList.remove('active');
-                    navLinks.classList.remove('active');
-                });
-            });
-            
-            // FAQ toggle functionality
-            const faqItems = document.querySelectorAll('.faq-item');
-            
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                
-                question.addEventListener('click', () => {
-                    item.classList.toggle('active');
-                });
-            });
-            
-            // Header scroll effect
+        });
+        window.addEventListener('scroll', function() {
             const header = document.getElementById('header');
-            
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    const navLinks = document.querySelector('.nav-links');
+                    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+                    if (navLinks.classList.contains('active')) {
+                        mobileMenuBtn.classList.remove('active');
+                        navLinks.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
                 }
             });
-            
-            // Animate elements on scroll
-            const animateOnScroll = function() {
-                const elements = document.querySelectorAll('.fade-in-up');
-                
-                elements.forEach(element => {
-                    const elementPosition = element.getBoundingClientRect().top;
-                    const windowHeight = window.innerHeight;
-                    
-                    if (elementPosition < windowHeight - 100) {
-                        element.classList.add('animated');
+        });
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
                     }
                 });
-            };
-            
-            // Initial check and then on scroll
-            animateOnScroll();
-            window.addEventListener('scroll', animateOnScroll);
-            
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        const headerHeight = document.getElementById('header').offsetHeight;
-                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-                        
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
+                item.classList.toggle('active');
+            });
+        });
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        const bodyEl = document.querySelector('body');
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                this.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                if (navLinks.classList.contains('active')) {
+                    bodyEl.style.overflow = 'hidden';
+                } else {
+                    bodyEl.style.overflow = 'auto';
+                }
+            });
+        }
+        document.addEventListener('click', (e) => {
+            if (navLinks && navLinks.classList.contains('active') &&
+                !e.target.closest('.nav-links') &&
+                !e.target.closest('.mobile-menu-btn')) {
+                mobileMenuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+                bodyEl.style.overflow = 'auto';
+            }
+        });
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+                mobileMenuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+                bodyEl.style.overflow = 'auto';
+            }
+        });
+        const testimonialSlider = new Swiper('.testimonial-slider', {
+            loop: true,
+            autoplay: { delay: 5000 },
+            pagination: { el: '.swiper-pagination', clickable: true },
+            breakpoints: {
+                640: { slidesPerView: 1, spaceBetween: 20 },
+                768: { slidesPerView: 1, spaceBetween: 30 },
+                1024: { slidesPerView: 1, spaceBetween: 40 }
+            }
+        });
+        // Efek hover pada kartu layanan
+        const serviceCards = document.querySelectorAll('.service-card');
+        serviceCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-5px)';
+                card.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.1)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = 'var(--shadow-sm)';
+            });
+        });
+        // Efek hover video
+        const videoContainers = document.querySelectorAll('.video-wrapper');
+        videoContainers.forEach(container => {
+            container.addEventListener('mouseenter', () => {
+                container.style.transform = 'translateY(-5px)';
+                container.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.15)';
+            });
+            container.addEventListener('mouseleave', () => {
+                container.style.transform = 'translateY(0)';
+                container.style.boxShadow = 'var(--shadow-lg)';
             });
         });
     </script>
