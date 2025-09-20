@@ -866,7 +866,7 @@
             font-size: 0.9rem;
         }
 
-        /* Mobile Menu - PERBAIKAN */
+        /* Mobile Menu - PERBAIKAN YANG LEBIH BAIK */
         .mobile-menu-btn {
             display: none;
             flex-direction: column;
@@ -1014,23 +1014,40 @@
             }
 
             .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
                 background: rgba(144, 25, 151, 0.95);
                 backdrop-filter: blur(20px);
                 flex-direction: column;
-                padding: 20px;
-                border-radius: 0 0 20px 20px;
-                gap: 15px;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+                padding: 80px 30px 30px;
+                border-radius: 0;
+                gap: 20px;
+                box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
                 z-index: 999;
+                transition: right 0.4s ease;
+                overflow-y: auto;
             }
 
             .nav-links.active {
-                display: flex;
+                right: 0;
+            }
+
+            .nav-links li {
+                width: 100%;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 15px;
+                font-size: 1.1rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-links a::before {
+                display: none;
             }
 
             .hero-content {
@@ -1091,11 +1108,15 @@
             .btn-primary, .btn-secondary {
                 padding: 12px 25px;
                 font-size: 0.9rem;
+                width: 100%;
+                justify-content: center;
             }
             
             .btn-whatsapp {
                 padding: 15px 30px;
                 font-size: 1.1rem;
+                width: 100%;
+                justify-content: center;
             }
             
             .section-title {
@@ -1119,6 +1140,33 @@
             .big-whatsapp-btn {
                 padding: 15px 25px;
                 font-size: 1.1rem;
+                width: 100%;
+            }
+
+            .service-card, .step-card, .gestun-card {
+                padding: 25px 20px;
+            }
+
+            .service-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+
+            .contact-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            .nav-links {
+                width: 80%;
             }
         }
     </style>
@@ -1420,7 +1468,7 @@
             <div class="ultra-glass animate-on-scroll" style="padding: 40px; margin-bottom: 30px;">
                 <h3 style="margin-bottom: 20px; color: #fff;">Apa Itu Gestun Online by Riki?</h3>
                 <p style="color: rgba(255,255,255,0.95); line-height: 1.6; margin-bottom: 20px;">
-                    <strong>Gestun by Riki</strong> adalah layanan pencairan limit digital menjadi uang tunai yang dilakukan secara online. Berbeda dengan pinjaman konvensional, gestun memanfaatkan limit yang sudah Anda miliki di platform tertentu, sehingga tidak menambah beban utang baru.
+                    <strong>Gestun by Riki</strong> adalah layanan pencairan limit digital menjadi uang tunai yang dilakukan secara online. Berbeda dengan pinjaman konvensional, gestun memanfaatkannya limit yang sudah Anda miliki di platform tertentu, sehingga tidak menambah beban utang baru.
                 </p>
             </div>
 
@@ -1689,7 +1737,7 @@
                     <h3>Layanan</h3>
                     <p><a href="#services">Gestun by Riki Instan</a></p>
                     <p><a href="#gestun-online">Gestun Paylater</a></p>
-                    <p><a href#gestun-online">Gestun CC Online</a></p>
+                    <p><a href="#gestun-online">Gestun CC Online</a></p>
                     <p><a href="#services">Layanan 24 Jam</a></p>
                 </div>
                 
@@ -1748,6 +1796,7 @@
                     if (navLinks.classList.contains('active')) {
                         mobileMenuBtn.classList.remove('active');
                         navLinks.classList.remove('active');
+                        document.body.style.overflow = 'auto';
                     }
                 }
             });
@@ -1788,15 +1837,23 @@
             observer.observe(el);
         });
 
-        // Mobile menu toggle
+        // Mobile menu toggle - PERBAIKAN MENU HAMBURGER
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const navLinks = document.querySelector('.nav-links');
+        const body = document.querySelector('body');
 
         if (mobileMenuBtn) {
             mobileMenuBtn.addEventListener('click', function(e) {
                 e.stopPropagation();
                 this.classList.toggle('active');
                 navLinks.classList.toggle('active');
+                
+                // Prevent body scroll when menu is open
+                if (navLinks.classList.contains('active')) {
+                    body.style.overflow = 'hidden';
+                } else {
+                    body.style.overflow = 'auto';
+                }
             });
         }
 
@@ -1807,6 +1864,16 @@
                 !e.target.closest('.mobile-menu-btn')) {
                 mobileMenuBtn.classList.remove('active');
                 navLinks.classList.remove('active');
+                body.style.overflow = 'auto';
+            }
+        });
+
+        // Close mobile menu when window is resized above 768px
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+                mobileMenuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+                body.style.overflow = 'auto';
             }
         });
 
